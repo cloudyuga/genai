@@ -1,0 +1,2 @@
+# genai
+GenAI Course 
