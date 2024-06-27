@@ -1,0 +1,6 @@
+streamlit
+pinecone-client
+PyMuPDF
+requests
+mistralai
+python-dotenv
