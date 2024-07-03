@@ -8,4 +8,3 @@ langchain
 langchain_community
 sentence-transformers
 PyGithub
-chardet
