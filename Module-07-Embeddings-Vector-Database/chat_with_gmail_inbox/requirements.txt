@@ -1,0 +1,13 @@
+streamlit
+PyMuPDF
+requests
+mistralai
+python-dotenv
+chromadb
+langchain
+langchain_community
+sentence-transformers
+gmail
+google-api-python-client 
+google-auth-httplib2 
+google-auth-oauthlib
