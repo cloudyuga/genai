@@ -1,6 +1,5 @@
 streamlit
 PyMuPDF
-requests
 mistralai
 python-dotenv
 chromadb
@@ -9,3 +8,5 @@ langchain_community
 sentence-transformers
 pytube
 youtube-transcript-api
+
+
