@@ -1,0 +1,11 @@
+streamlit
+PyMuPDF
+requests
+mistralai
+python-dotenv
+chromadb
+langchain
+langchain_community
+sentence-transformers
+PyGithub
+chardet
