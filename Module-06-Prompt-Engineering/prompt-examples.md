@@ -1,1 +1,1 @@
-<img src="images/classification.png">
+<img src="images/summary.png">
