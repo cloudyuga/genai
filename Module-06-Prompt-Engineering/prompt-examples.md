@@ -1,2 +1,2 @@
-<img src="images/summary.png">
-[](images/summary.png)
+<img src="Images/summary.png">
+![](Images/summary.png)
