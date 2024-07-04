@@ -9,7 +9,7 @@ Team India defeated South Africa in the T20 World Cup final on Saturday. Rohit S
 India posted 176 in the big final at the Kensington Oval in Barbados. Virat Kohli top-scored with 76 after which the bowlers led the show. South Africa were cruising at one point, needing just 30 off 30. However, Jasprit Bumrah stepped up and delivered a miserly spell at the death to deliver the victory for India.
 Following the victory, Rohit Sharma, Virat Kohli and Ravindra Jadeja retired from T20Is. It was also the end of coach Rahul Dravid's tenure.
 
-#Text Summarization
+# Text Summarization
 
 Prompt: Summarize the following text about Indian Cricket Team:
 [Text]
@@ -26,10 +26,9 @@ Prompt: Extract key information from the following text about India's cricket te
 Prompt: Extract key information from the following text about cricketers:
 [Text]
 
-<img src="Images/key-points-cricketer.png">
-![](Images/key-points-cricketer.png)
+<img src="Images/key-point-cricketer.png">
 
-#Question Answering
+# Question Answering
 
 Prompt: Answer the following questions based on the text about the indian cricket team:
 [Text] 
@@ -38,9 +37,8 @@ Prompt: Answer the following questions based on the text about the indian cricke
 3. Who is the BCCI secretary?
 
 <img src="Images/Q-A.png">
-![](Images/Q-A.png)
 
-#Text Classification 
+# Text Classification 
 
 Prompt: Classify the following text about a cricket match into one of the categories:
 1. Test, ODI, T20 
@@ -49,40 +47,34 @@ Prompt: Classify the following text about a cricket match into one of the catego
 [Text]
 
 <img src="Images/cassification.png">
-![](Images/classification.png)
 
-#Conversation 
+# Conversation 
 
 Prompt: Have a conversation about the benefits of playing cricket. Role: User & Assistant.
 
 <img src="Images/conversation.png">
-![](Images/conversation.png)
 
-#Code Generation
+# Code Generation
 
 Prompt: You have more than 10 years of experience in python programming. Use your experience and write a clean code to find the maximum number from a given list. Please don’t write any comments in the code. Print the output of the function.
 
 <img src="Images/code-generation.png">
-![](Images/code-generation.png)
 
-#Reasoning
+# Reasoning
 
 Prompt: Why is India winning the T-20 World Cup is significant?
 
 <img src="Images/resoning1.png">
-![](Images/resoning1.png)
 
-#Chain-of-Thought :It improves reasoning capabilities.
+# Chain-of-Thought:It improves reasoning capabilities.
 
 Example with simple prompt:
 
 <img src="Images/COT1.png">
-![](Images/COT1.png)
 
 Example with chain of thought prompting:
 
 <img src="Images/COT2.png">
-![](Images/COT2.png)
 
 
 
