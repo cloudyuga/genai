@@ -12,6 +12,7 @@ Following the victory, Rohit Sharma, Virat Kohli and Ravindra Jadeja retired fro
 # Text Summarization
 
 Prompt: Summarize the following text about Indian Cricket Team:
+
 [Text]
 
 <img src="Images/summary.png">
@@ -19,11 +20,13 @@ Prompt: Summarize the following text about Indian Cricket Team:
 # Information Extraction
 
 Prompt: Extract key information from the following text about India's cricket team in 5 points. 
+
 [Text]
 
 <img src="Images/key-points-team.png">
 
 Prompt: Extract key information from the following text about cricketers:
+
 [Text]
 
 <img src="Images/key-point-cricketer.png">
@@ -31,6 +34,7 @@ Prompt: Extract key information from the following text about cricketers:
 # Question Answering
 
 Prompt: Answer the following questions based on the text about the indian cricket team:
+
 [Text] 
 1. Who are the top performers? 
 2. Where was the final match played? 
@@ -44,9 +48,10 @@ Prompt: Classify the following text about a cricket match into one of the catego
 1. Test, ODI, T20 
 2. International, Domestic 
 3. Men's team, Women's team, Under 19 team 
+
 [Text]
 
-<img src="Images/cassification.png">
+<img src="Images/classification.png">
 
 # Conversation 
 
