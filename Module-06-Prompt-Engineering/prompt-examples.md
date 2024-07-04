@@ -13,7 +13,6 @@ A special cake representing the World Cup Trophy has been also made for the team
 Team India defeated South Africa in the T20 World Cup final on Saturday. Rohit Sharma became only the second captain after MS Dhoni to win the T20 World Cup trophy for India. It was also the end of the 11-year-long wait for an ICC trophy in men's cricket.
 
 India posted 176 in the big final at the Kensington Oval in Barbados. Virat Kohli top-scored with 76 after which the bowlers led the show. South Africa were cruising at one point, needing just 30 off 30. However, Jasprit Bumrah stepped up and delivered a miserly spell at the death to deliver the victory for India.
-
 Following the victory, Rohit Sharma, Virat Kohli and Ravindra Jadeja retired from T20Is. It was also the end of coach Rahul Dravid's tenure.
 
 # Text Summarization
