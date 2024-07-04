@@ -1,4 +1,5 @@
-#Text:
+# Text:
+
 The Indian cricket team landed in New Delhi on Thursday morning in a special Air India chartered plane from Barbados. After a 3-day wait on the Caribbean island after the T20 World Cup triumph, the cricket heroes returned home with the trophy. The BCCI shared a video of the players taking the trophy off of the chartered plane.
 A big group of fans welcomed the team at the airport. Captain Rohit Sharma headed out of the airport with the trophy in his hand. Virat Kohli received a rousing reception and the star player waved to the fans, acknowledging their support.
 Notably, the Men in Blue were left stranded in Barbados for four days after winning the coveted title with the airport shut down due to Hurricane Beryl. Once the weather improved, a special Air India chartered flight was sent to Barbados to bring the World Champions back home.
@@ -14,15 +15,13 @@ Prompt: Summarize the following text about Indian Cricket Team:
 [Text]
 
 <img src="Images/summary.png">
-![](Images/summary.png)
 
-#Information Extraction
+# Information Extraction
 
 Prompt: Extract key information from the following text about India's cricket team in 5 points. 
 [Text]
 
 <img src="Images/key-points-team.png">
-![](Images/key-points-team.png)
 
 Prompt: Extract key information from the following text about cricketers:
 [Text]
