@@ -5,6 +5,7 @@ python-dotenv
 chromadb
 langchain
 langchain_community
+langchain-text-splitters
 sentence-transformers
 pytube
 youtube-transcript-api
