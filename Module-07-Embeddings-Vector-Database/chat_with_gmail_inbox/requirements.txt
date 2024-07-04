@@ -6,6 +6,7 @@ python-dotenv
 chromadb
 langchain
 langchain_community
+langchain-text-splitters
 sentence-transformers
 google-api-python-client
 google-auth
