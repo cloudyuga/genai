@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 mistral_api_key = os.getenv("MISTRAL_API_KEY")
-embeddings = HuggingFaceEmbeddings()
+embeddings = HuggingFaceEmbeddings() # all-mpnet-base-v2 model is used as a default model for this class
 
 # Initialize Mistral client
 client = MistralClient(api_key=mistral_api_key)
