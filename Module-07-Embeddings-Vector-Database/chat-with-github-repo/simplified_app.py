@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 mistral_api_key = os.getenv("MISTRAL_API_KEY")
-embeddings = HuggingFaceEmbeddings()
+embeddings = HuggingFaceEmbeddings() # all-mpnet-base-v2 model is used as a default model for this class
 
 # Function to fetch repository data from GitHub
 def fetch_github_repo_data(git_repo, github_token):
