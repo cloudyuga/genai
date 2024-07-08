@@ -2,52 +2,53 @@ import os
 import json
 import pandas as pd
 from dotenv import load_dotenv
-from utils import read_data_from_url, get_table_data #read_file
-from langchain.chat_models import ChatOpenAI
-from langchain.llms import OpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from langchain.chains import SequentialChain
-import PyPDF2
+from utils import get_table_data, read_data_from_url
+import streamlit as st
+from MCQGen import generate_evaluate_chain
 
-#load environment var from .env
-load_dotenv()
-#acess env var
-KEY=os.getenv("OPENAI_API_KEY")
+# loading JSON file
+with open('./response.json','r', encoding="utf-8") as file:
+    RESPONSE_JSON = json.load(file)
 
-llm = ChatOpenAI(openai_api_key=KEY,model_name="gpt-3.5-turbo", temperature=0.5)
+#create a title
+st.title("MCQ Creator Application with langchain")
 
-TEMPLATE="""
-Text:{text}
-You are an expert MCQ maker. Given the above text, it is your job to \
-create a quiz  of {number} multiple choice questions for students in {tone} tone.
-Make sure the questions are not repeated and check all the questions to be conforming the text as well.
-Make sure to format your response like  RESPONSE_JSON below  and use it as a guide. \
-Ensure to make {number} MCQs
-### RESPONSE_JSON
-{response_json}
+#create a form using st.form
+with st.form("user_inputs"):
+    #file upload
+    # uploaded_file=st.file_uploader("upload a pdf or text file")
+    url_add=st.text_input("URL", max_chars=100)
+    #input fields
+    mcq_count=st.number_input("No. of MCQ", min_value=3, max_value=50)
+    #quiz tone
+    tone=st.text_input("Complexity level of Questions", max_chars=20, placeholder="simple")
+    # Add button
+    button=st.form_submit_button("Create MCQs")
 
-"""
-quiz_generation_prompt = PromptTemplate(
-    input_variables=["text", "number", "tone", "response_json"],
-    template=TEMPLATE
-    )
-
-quiz_chain=LLMChain(llm=llm , prompt=quiz_generation_prompt , output_key="quiz" , verbose=True)
-
-TEMPLATE2="""
-You are an expert english grammarian and writer. Given a Multiple Choice Quiz for students.\
-You need to evaluate the complexity of the question and give a complete analysis of the quiz. Only use at max 50 words for complexity analysis.
-if the quiz is not at per with the cognitive and analytical abilities of the students,\
-update the quiz questions which needs to be changed and change the tone such that it perfectly fits the student abilities
-Quiz_MCQs:
-{quiz}
-
-Check from an expert English Writer of the above quiz:
-"""
-quiz_evaluation_prompt=PromptTemplate(input_variables=["quiz"], template=TEMPLATE2)
-
-review_chain=LLMChain(llm=llm , prompt=quiz_evaluation_prompt , output_key="review", verbose=True)
-
-#connect both chain quiz_chain & review_chain
-generate_evaluate_chain=SequentialChain(chains=[quiz_chain , review_chain] , input_variables=["text", "number", "tone", "response_json"] , output_variables=["quiz", "review"], verbose=True,)
+    #check if the button is clicked and all fields have input
+    if button and url_add is not None and mcq_count and tone:
+        with st.spinner("loading..."):
+            text = read_data_from_url(url_add)
+            response=generate_evaluate_chain(
+                {
+                "text": text,
+                "number": mcq_count,
+                "tone": tone,
+                "response_json": json.dumps(RESPONSE_JSON)
+                }
+            )
+            if isinstance(response,dict):
+              #extract quiz data from the response
+                quiz=response.get("quiz", None)
+                if quiz is not None:
+                    table_data=get_table_data(quiz)
+                    if table_data is not None:
+                        df=pd.DataFrame(table_data)
+                        df.index=df.index+1
+                        st.table(df)
+                        #Display the review in a textbox as well
+                        st.text_area(label="Review", value=response["review"])
+                    else:
+                        st.error("Error in the table data")
+            else:
+                st.write(response)
