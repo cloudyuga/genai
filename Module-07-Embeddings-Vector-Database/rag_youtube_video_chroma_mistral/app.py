@@ -1,4 +1,3 @@
-#Running:)
 # Enter video link from UI that must have captions. example_video = "https://www.youtube.com/watch?v=4O1rs7mrNDo"
 import streamlit as st
 from mistralai.client import MistralClient
