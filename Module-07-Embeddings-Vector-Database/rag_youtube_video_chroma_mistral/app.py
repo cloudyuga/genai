@@ -9,7 +9,6 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from pytube import YouTube
 import tempfile
 import os
-import fitz  # PyMuPDF
 
 # Load environment variables
 from dotenv import load_dotenv
