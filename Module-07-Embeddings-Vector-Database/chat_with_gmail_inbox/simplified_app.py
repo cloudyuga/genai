@@ -101,23 +101,18 @@ def get_llm_response(text, prompt):
         return None
 
 # Streamlit application
-def main():
-    st.title("Chat with your Gmail Inbox 📧")
-    st.caption("This app allows you to chat with your Gmail inbox using MistralAI and ChromaDB")
-    # Fetch Gmail emails
-    email_text = fetch_gmail_emails()
-    # Ask a question about the emails
-    prompt = st.text_input("Ask any question about your emails")
-    # Chat with the emails
-    if prompt:
-        chunks = create_chunks(email_text)
-        vectordb = embed_store(chunks)
-        text = retriever(vectordb, prompt)
-        answer = get_llm_response(text, prompt)
-        if answer:
-            st.subheader("Generated Answer:")
-            st.write(answer)
-
-if __name__ == "__main__":
-    main()
-
+st.title("Chat with your Gmail Inbox 📧")
+st.caption("This app allows you to chat with your Gmail inbox using MistralAI and ChromaDB")
+# Fetch Gmail emails
+email_text = fetch_gmail_emails()
+# Ask a question about the emails
+prompt = st.text_input("Ask any question about your emails")
+# Chat with the emails
+if prompt:
+    chunks = create_chunks(email_text)
+    vectordb = embed_store(chunks)
+    text = retriever(vectordb, prompt)
+    answer = get_llm_response(text, prompt)
+    if answer:
+        st.subheader("Generated Answer:")
+        st.write(answer)
