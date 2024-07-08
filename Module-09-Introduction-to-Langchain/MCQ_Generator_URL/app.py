@@ -15,12 +15,8 @@ st.title("MCQ Creator Application with langchain")
 
 #create a form using st.form
 with st.form("user_inputs"):
-    #file upload
-    # uploaded_file=st.file_uploader("upload a pdf or text file")
     url_add=st.text_input("URL", max_chars=100)
-    #input fields
     mcq_count=st.number_input("No. of MCQ", min_value=3, max_value=50)
-    #quiz tone
     tone=st.text_input("Complexity level of Questions", max_chars=20, placeholder="simple")
     # Add button
     button=st.form_submit_button("Create MCQs")
