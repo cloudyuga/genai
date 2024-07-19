@@ -1,0 +1,8 @@
+langchain
+gradio
+beautifulsoup4
+pandas
+langchain_community
+torch
+langchain-huggingface 
+python-dotenv
