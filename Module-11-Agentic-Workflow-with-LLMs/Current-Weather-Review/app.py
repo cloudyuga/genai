@@ -96,9 +96,6 @@ agent = create_react_agent(
 )
 agent_executor = AgentExecutor(agent=agent, tools=tools_for_agent, verbose=True)
 
-# Set verbose globally
-globals.set_verbose(True)
-
 st.title("City Weather Information with AI Review")
 
 # Streamlit UI for fetching and reviewing weather
