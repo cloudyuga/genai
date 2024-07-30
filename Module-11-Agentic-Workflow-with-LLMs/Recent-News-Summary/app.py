@@ -6,7 +6,6 @@ from langchain.prompts import PromptTemplate
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.tools import Tool
 from langchain_huggingface import HuggingFaceEndpoint
-from langchain import globals
 
 # Load environment variables
 load_dotenv()
@@ -98,9 +97,6 @@ agent = create_react_agent(
     prompt=react_prompt
 )
 agent_executor = AgentExecutor(agent=agent, tools=tools_for_agent, verbose=True)
-
-# Set verbose globally
-globals.set_verbose(True)
 
 # Streamlit UI for fetching and summarizing news
 if st.button("Get and Summarize News"):
