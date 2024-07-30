@@ -6,7 +6,6 @@ from langchain.prompts import PromptTemplate
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.tools import Tool
 from langchain_huggingface import HuggingFaceEndpoint
-from langchain import globals
 
 # Load environment variables
 load_dotenv()
