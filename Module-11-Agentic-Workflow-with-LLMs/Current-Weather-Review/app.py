@@ -6,34 +6,48 @@ from langchain.prompts import PromptTemplate
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.tools import Tool
 from langchain_huggingface import HuggingFaceEndpoint
+import urllib.parse
 
-# Load environment variables
-load_dotenv()
-OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
-HF_TOKEN = os.getenv("HF_TOKEN")
+# Load environment variables, Remove comments to load api keys from .env file
+#load_dotenv()
+#OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
+#HF_TOKEN = os.getenv("HF_TOKEN")
 
-# Define a tool to fetch weather information
-def fetch_weather(city: str) -> dict:
-    """Fetch the weather information for a given city."""
+# Get API keys from the user
+st.title("City Weather Information with AI Review")
+OPENWEATHER_API_KEY = st.sidebar.text_input("Enter Weather API Key", type="password")
+st.sidebar.write("Check out this [Weather API](https://home.openweathermap.org/api_keys) to generate API key")
+HF_TOKEN = st.sidebar.text_input("Enter Hugging Face API Key", type="password")
+st.sidebar.write("Check out this [Hugging Face Token](https://huggingface.co/settings/tokens) to generate token")
+city = st.text_input("Enter the name of a city:")
+
+# Define a tool to fetch weather information and generate a review
+def fetch_and_review_weather(city: str) -> str:
+    """Fetch the weather information for a given city and generate a review."""
     city = city.strip()  # Ensure no leading/trailing spaces
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={OPENWEATHER_API_KEY}&units=metric"
-    response = httpx.get(url)
-    response.raise_for_status()
-    return response.json()
-
-# Define a tool to review the weather
-def review_weather_tool(city: str, weather_data: dict) -> str:
-    """Generate a review of the weather data."""
-    weather = weather_data['weather'][0]['main']
-    temperature = weather_data['main']['temp']
     
-    # Sanitize the input text to remove non-printable characters
-    input_text = f"The current weather in {city} is {weather} with a temperature of {temperature}°C. As an expert in weather forecast analysis, please provide an appropriate weather review."
-    input_text = ''.join(c for c in input_text if c.isprintable())
+    # Encode the city name for the URL
+    encoded_city = urllib.parse.quote(city)
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={encoded_city}&appid={OPENWEATHER_API_KEY}&units=metric"
     
-    # Generate the review
-    review = llm(input_text)
-    return review
+    try:
+        response = httpx.get(url)
+        response.raise_for_status()
+        weather_data = response.json()
+        
+        # Extract weather details
+        weather = weather_data['weather'][0]['main']
+        temperature = weather_data['main']['temp']
+        
+        # Generate the review
+        input_text = f"The current weather in {city} is {weather} with a temperature of {temperature}°C. As an expert in weather forecast analysis, please provide an appropriate weather review."
+        input_text = ''.join(c for c in input_text if c.isprintable())
+        
+        # Generate the review using the language model
+        review = llm(input_text)
+        return review
+    except Exception as e:
+        return f"Error: {e}"
 
 # Initialize the HuggingFace inference endpoint
 llm = HuggingFaceEndpoint(
@@ -43,28 +57,20 @@ llm = HuggingFaceEndpoint(
     max_new_tokens=200
 )
 
-# Define tools for the agent
+# Define the tool for the agent
 tools_for_agent = [
     Tool(
-        name="fetch_weather",
-        func=fetch_weather,
-        description="Fetch the weather information for a given city"
-    ),
-    Tool(
-        name="review_weather",
-        func=lambda city, weather_data: review_weather_tool(city, weather_data),
-        description="Generate a review of the weather data"
+        name="fetch_and_review_weather",
+        func=fetch_and_review_weather,
+        description="Fetch the weather information for a given city and generate a review"
     )
 ]
 
 # Define a prompt template for the agent
 template = """
 Answer the following questions as best you can. You have access to the following tools:
-
 {tools}
-
 Use the following format:
-
 Question: the input question you must answer
 Thought: you should always think about what to do
 Action: the action to take, should be one of [{tool_names}]
@@ -73,9 +79,7 @@ Observation: the result of the action
 ... (this Thought/Action/Action Input/Observation can repeat N times)
 Thought: I now know the final answer
 Final Answer: the final answer to the original input question
-
 Begin!
-
 Question: {input}
 Thought:
 {agent_scratchpad}
@@ -95,35 +99,18 @@ agent = create_react_agent(
 )
 agent_executor = AgentExecutor(agent=agent, tools=tools_for_agent, verbose=True)
 
-st.title("City Weather Information with AI Review")
-
 # Streamlit UI for fetching and reviewing weather
-city = st.text_input("Enter the name of a city:")
 
-if st.button("Get Weather Information"):
-    with st.spinner("Fetching weather information..."):
+if st.button("Get Weather Information and Review"):
+    with st.spinner("Processing..."):
         try:
-            city_sanitized = city.strip()  # Ensure no leading/trailing spaces
-            weather_data = fetch_weather(city_sanitized)
-            st.write(f"Weather in {city_sanitized}:")
-            st.write(f"Weather: {weather_data['weather'][0]['main']}")
-            st.write(f"Temperature: {weather_data['main']['temp']}°C")
+            # Directly call the fetch_and_review_weather function through the agent
+            review = agent_executor.invoke({
+                'input': f"Generate weather review for {city}",
+                'agent_scratchpad': ''
+            }, handle_parsing_errors=True)
+            
+            st.subheader("AI Generated Weather Review")
+            st.write(review['output'])
         except Exception as e:
-            st.error(f"Error fetching weather data: {e}")
-            weather_data = {}
-
-    if weather_data:
-        with st.spinner("Generating AI review of the weather..."):
-            try:
-                input_data = {
-                    'input': f"Generate a weather review for {city_sanitized}.",
-                    'fetch_weather': weather_data,
-                    'city': city_sanitized,
-                    'agent_scratchpad': ''
-                }
-                # Directly call the review_weather_tool without the agent for this step
-                review = review_weather_tool(city_sanitized, weather_data)
-                st.subheader("AI Generated Weather Review")
-                st.write(review)
-            except Exception as e:
-                st.error(f"Error generating weather review: {e}")
+            st.error(f"Error generating weather review: {e}")
