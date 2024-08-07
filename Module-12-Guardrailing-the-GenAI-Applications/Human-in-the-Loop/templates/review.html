@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Generated Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Light background for the whole page */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1c1c1c; /* Dark background for the container */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ffffff; /* Light color for the title */
+        }
+        p {
+            text-align: left;
+            font-size: 1.1em;
+            color: #e0e0e0; /* Light gray color for the text */
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 1.2em;
+            text-align: left;
+            color: #e0e0e0; /* Light color for label */
+        }
+        select {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #444; /* Darker border for the select */
+            border-radius: 4px;
+            background-color: #333; /* Dark background for the select */
+            color: #e0e0e0; /* Light text color for the select */
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto; /* Center the button */
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #ffffff; /* White text color for the button */
+            background-color: #007bff; /* Blue color for button */
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Slightly darker blue on hover */
+        }
+        .feedback-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Generated Text</h1>
+        <form action="/review" method="post">
+            <input type="hidden" name="prompt" value="{{ prompt }}">
+            <input type="hidden" name="generated_text" value="{{ generated_text }}">
+            <div class="feedback-section">
+                <p><strong>Prompt:</strong> {{ prompt }}</p>
+                <p><strong>Generated Text:</strong> {{ generated_text }}</p>
+                <label for="feedback">Feedback:</label>
+                <select id="feedback" name="feedback">
+                    <option value="approved">Approve</option>
+                    <option value="rejected">Reject</option>
+                </select>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
