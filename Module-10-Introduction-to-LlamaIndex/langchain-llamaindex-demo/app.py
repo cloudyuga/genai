@@ -26,7 +26,7 @@ else:
         st.error("No documents found in the 'data' directory.")
     else:
         # Create an index from documents with default embedding
-        index = VectorStoreIndex.from_documents(documents, llm=llm)  
+        index = VectorStoreIndex.from_documents(documents)  
 
         # Streamlit app interface
         st.title("LlamaIndex-LangChain Demo")
