@@ -1,3 +1,4 @@
+# In this app we will use data directory to get the contents. 
 import os
 import streamlit as st
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
