@@ -25,9 +25,9 @@ else:
     if not documents:
         st.error("No documents found in the 'data' directory.")
     else:
-        # Create an index from documents with default embedding
+        # Create an index from documents with default openai embedding and llm models
         index = VectorStoreIndex.from_documents(documents)  
-
+    
         # Streamlit app interface
         st.title("LlamaIndex-LangChain Demo")
 
