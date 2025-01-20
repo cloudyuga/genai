@@ -7,9 +7,21 @@ from openai import OpenAI
 # Set up your OpenAI API key and create OPENAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-
 # File path for persistent memory
 MEMORY_FILE = "agent_memory.json"
+
+# Define personas
+def define_persona(persona_type):
+    """
+    Return a persona-specific prompt prefix.
+    """
+    personas = {
+        "friendly_assistant": "You are a friendly and helpful assistant. Always be cheerful and concise.",
+        "technical_expert": "You are a technical expert specializing in cloud computing and DevOps. Provide detailed, technical answers.",
+        "creative_writer": "You are a creative writer skilled in crafting compelling stories and metaphors.",
+        "strict_tutor": "You are a strict but fair tutor who explains concepts clearly and ensures learning through quizzes."
+    }
+    return personas.get(persona_type, "You are a helpful AI assistant.")
 
 
 # Load persistent memory
@@ -31,38 +43,44 @@ def save_memory(memory):
         json.dump(memory, f, indent=4)
 
 # Retrieve relevant memory
-def retrieve_relevant_memory(memory, prompt, max_entries=3):
+def retrieve_relevant_memory(memory, prompt):
     """
     Retrieve relevant memory entries based on keywords in the user input.
     """
     relevant_memory = [
-        entry for entry in memory if any(word in entry["prompt"] for word in prompt.split())
+        entry for entry in memory if any(word in entry["content"] for word in prompt.split())
     ]
-    return relevant_memory[-max_entries:]
+    return relevant_memory
+
+def build_messages(prompt, persona_prefix, memory):
+    """
+    collate all inputs and build a prompt
+    """
+    messages = [{"role": "system", "content": persona_prefix}]
+    if memory:
+        messages.extend(memory)
+    messages.append({"role": "user", "content": f"Current Task: {prompt}"})
+
+    #print(messages)
+    return messages
 
 # Process input with memory
-def process_prompt_with_memory(llm, user_input, persona_prefix, reasoning_suffix, memory):
+def process_prompt_with_memory(prompt, persona_prefix, memory):
     """
-    Process the input prompt using the LLM with persona, reasoning, and memory.
+    Process the input prompt using the LLM with persona and memory.
     """
     # Retrieve relevant memory
-    relevant_memory = retrieve_relevant_memory(memory, user_input)
-    print(relevant_memory)
-    memory_text = "\n".join([f"role: {entry['user_input']}\nAI: {entry['response']}" for entry in relevant_memory])
-
-    # Construct the prompt
-    prompt = f"{persona_prefix}\n\nRelevant Memory:\n{memory_text}\n\nUser: {user_input}\nAI:\n{reasoning_suffix}"
-
+    relevant_memory = retrieve_relevant_memory(memory, prompt)
+    messages = build_messages(prompt, persona_prefix, relevant_memory)
     try:
         response = client.chat.completions.create(model="gpt-3.5-turbo",  # Use the cheapest model
-        messages=[
-            {"role": "system", "content": persona_prefix},
-            {"role": "user", "content": reasoning_suffix},
-            {"role": "user", "content": prompt}
-        ],
+        messages=messages,
         max_tokens=150,
         temperature=0.7)
         #print(response)
+        memory.append({f"role": "user", f"content": prompt})
+        save_memory(memory)
+
         return response.choices[0].message.content.strip()
     except Exception as e:
         return f"Error: {e}"
@@ -71,10 +89,6 @@ def process_prompt_with_memory(llm, user_input, persona_prefix, reasoning_suffix
 # Main function
 if __name__ == "__main__":
     print("Welcome to the Agent with Persistent Memory!")
-
-    # Initialize LLM
-    llm = initialize_llm()
-    print("LLM Initialized. Ready to process prompts.")
 
     # Load persistent memory
     memory = load_memory()
@@ -90,25 +104,15 @@ if __name__ == "__main__":
     persona_prefix = define_persona(selected_persona)
     print(f"\nYou selected: {selected_persona}\n")
 
-    # Reasoning strategy selection
-    print("\nSelect a reasoning strategy:")
-    strategies = ["chain_of_thought", "self_reflection"]
-    for i, strategy in enumerate(strategies, start=1):
-        print(f"{i}. {strategy}")
-
-    strategy_choice = int(input("\nEnter the number for your desired strategy: "))
-    selected_strategy = strategies[strategy_choice - 1]
-    reasoning_suffix = reasoning_strategy(selected_strategy)
-    print(f"\nYou selected: {selected_strategy}\n")
-
     # Interactive prompt processing
     while True:
         user_input = input("\nEnter a prompt (or type 'exit' to quit): ")
         if user_input.lower() == "exit":
             print("Exiting. Goodbye!")
+
             break
 
-        response = process_prompt_with_memory(llm, user_input, persona_prefix, reasoning_suffix, memory)
+        response = process_prompt_with_memory(user_input, persona_prefix, memory)
         print("\nResponse:")
         print(response)
 
