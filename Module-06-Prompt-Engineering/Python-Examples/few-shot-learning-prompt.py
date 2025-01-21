@@ -21,3 +21,8 @@ response = client.chat.completions.create(
     max_tokens=50
 )
 print(response.choices[0].message.content)
+
+
+Output:
+python .\few-shot-learning-prompt.py
+"I love programming." -> "J'adore la programmation."
