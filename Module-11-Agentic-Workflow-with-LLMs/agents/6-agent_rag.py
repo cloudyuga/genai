@@ -1,20 +1,39 @@
 # agent_rag.py
 import openai
-from langchain.llms import OpenAI
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from openai import OpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 import os
 
-# Set up your OpenAI API key
+# Set up your OpenAI API key and create OPENAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Initialize the base LLM
-def initialize_llm():
+# Define personas
+def define_persona(persona_type):
     """
-    Initialize the base Language Learning Model (LLM) using LangChain and OpenAI.
+    Return a persona-specific prompt prefix.
     """
-    return OpenAI(model_name="gpt-4", temperature=0.7)
+    personas = {
+        "friendly_assistant": "You are a friendly and helpful assistant. Always be cheerful and concise.",
+        "technical_expert": "You are a technical expert specializing in cloud computing and DevOps. Provide detailed, technical answers.",
+        "creative_writer": "You are a creative writer skilled in crafting compelling stories and metaphors.",
+        "strict_tutor": "You are a strict but fair tutor who explains concepts clearly and ensures learning through quizzes."
+    }
+    return personas.get(persona_type, "You are a helpful AI assistant.")
+
+# Define reasoning strategies
+def reasoning_strategy(strategy_type):
+    """
+    Return a reasoning-specific prompt suffix.
+    """
+    strategies = {
+        "chain_of_thought": "Explain your reasoning step by step before providing the final answer.",
+        "self_reflection": "After answering, critique your own response for accuracy and clarity, and refine it if needed."
+    }
+    return strategies.get(strategy_type, "")
+
 
 # Initialize the vector store
 def initialize_vector_store(knowledge_path, embedding_model):
@@ -41,30 +60,38 @@ def retrieve_context(vector_store, query, top_k=3):
     return vector_store.similarity_search(query, k=top_k)
 
 # Process input with RAG
-def process_prompt_with_rag(llm, user_input, persona_prefix, reasoning_suffix, vector_store):
+def process_prompt_with_rag(prompt, persona_prefix, reasoning_suffix, vector_store):
     """
     Process the input prompt using the LLM with persona, reasoning, and retrieved context.
     """
     # Retrieve relevant context
-    relevant_docs = retrieve_context(vector_store, user_input)
+    relevant_docs = retrieve_context(vector_store, prompt)
     context = "\n".join([doc.page_content for doc in relevant_docs])
+    print("*** Context start ***** \n")
+    print(context)
+    print("*** Context end ***** \n")
 
     # Construct the prompt
-    prompt = f"{persona_prefix}\n\nRelevant Context:\n{context}\n\nUser: {user_input}\nAI:\n{reasoning_suffix}"
+    # prompt = f"{persona_prefix}\n\nRelevant Context:\n{context}\n\nUser: {user_input}\nAI:\n{reasoning_suffix}"
 
     try:
-        response = llm(prompt)
-        return response
+        response = client.chat.completions.create(model="gpt-3.5-turbo",  # Use the cheapest model
+        messages=[
+            {"role": "system", "content": persona_prefix},
+            {"role": "user", "content": reasoning_suffix},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=150,
+        temperature=0.7)
+        #print(response)
+        return response.choices[0].message.content.strip()
     except Exception as e:
-        return f"Error processing the prompt: {e}"
+        return f"Error: {e}"
+
 
 # Main function
 if __name__ == "__main__":
     print("Welcome to the Agent with Retrieval-Augmented Generation!")
-
-    # Initialize LLM
-    llm = initialize_llm()
-    print("LLM Initialized. Ready to process prompts.")
 
     # Initialize embeddings and vector store
     embedding_model = OpenAIEmbeddings()
@@ -101,7 +128,7 @@ if __name__ == "__main__":
             print("Exiting. Goodbye!")
             break
 
-        response = process_prompt_with_rag(llm, user_input, persona_prefix, reasoning_suffix, vector_store)
+        response = process_prompt_with_rag(user_input, persona_prefix, reasoning_suffix, vector_store)
         print("\nResponse:")
         print(response)
 
