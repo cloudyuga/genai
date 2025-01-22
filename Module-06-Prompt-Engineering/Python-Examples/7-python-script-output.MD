@@ -1,21 +1,28 @@
 ## 1. Output of Zero-shot prompt:
 python .\zero-shot-prompt.py
+
 Beneath the sky where seagulls roam,  
+
 The ocean sings its ancient tome.
+
 Its waves, like whispers, brush the shore,
+
 A lullaby that calls for more.
+
 
 The sun dips low, a fiery hue,
 
 
 ## 2. Output of few-shot learning prompt:
 python .\few-shot-learning-prompt.py
+
 "I love programming." -> "J'adore la programmation."
 
 
 ## 3. Output of contextual prompt:
 python .\contextual-prompt.py       
 Enter the context (provide detailed background information): The time from Britain's first inhabitation until the Last Glacial Maximum is known as the Old Stone Age, or Palaeolithic era. Archaeological evidence indicates that what was to become England was colonised by humans long before the rest of the British Isles because of its more hospitable climate between and during the various glacial periods of the distant past. This earliest evidence, from Happisburgh in Norfolk, includes the oldest hominid artefacts found in Britain, and points to dates of more than 800,000 RCYBP.[1] These earliest inhabitants were hunter-gatherers. Low sea-levels meant that Britain was attached to the continent for much of this earliest period of history, and varying temperatures over tens of thousands of years meant that it was not always inhabited.
+
 Enter the question (what do you want to know?): what is old stone age?
 
 Response:
@@ -24,11 +31,13 @@ The Old Stone Age, or Palaeolithic era, is the earliest period of human history 
 
 ## 4. Output of prompt with constraints:
 python .\prompt-with-constraints.py
+
 Climate change refers to long-term alterations in temperature, precipitation, and other atmospheric conditions, primarily attributed to human activities such as fossil fuel combustion and deforestation. It poses significant environmental challenges, including increased frequency of extreme weather events, rising sea levels, and biodiversity loss, necessitating urgent global cooperation to mitigate its effects.
 
 
 ## 5. Output of COT
 python .\chain-of-thought.py
+
 To determine how many apples Tom has after the transactions described, we can break it down step by step:
 
 1. **Initial Number of Apples**: Tom starts with 12 apples.
