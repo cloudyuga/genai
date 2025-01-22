@@ -1,0 +1,9 @@
+streamlit
+pymupdf
+langchain
+langchain_community
+langchain_text_splitters
+chromadb
+openai
+sentence-transformers
+python-dotenv
