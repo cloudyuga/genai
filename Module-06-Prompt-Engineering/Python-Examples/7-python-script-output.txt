@@ -6,3 +6,10 @@ Its waves, like whispers, brush the shore,
 A lullaby that calls for more.
 
 The sun dips low, a fiery hue,
+
+
+## Output of few-shot learning prompt:
+python .\few-shot-learning-prompt.py
+"I love programming." -> "J'adore la programmation."
+
+##
