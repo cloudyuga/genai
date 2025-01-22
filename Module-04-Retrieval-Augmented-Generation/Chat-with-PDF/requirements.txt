@@ -1,0 +1,5 @@
+openai
+PyPDF2
+python-dotenv
+numpy
+scikit-learn
