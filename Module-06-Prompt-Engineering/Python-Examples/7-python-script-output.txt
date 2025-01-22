@@ -1,4 +1,4 @@
-##Output of Zero-shot prompt:
+## Output of Zero-shot prompt:
 python .\zero-shot-prompt.py
 Beneath the sky where seagulls roam,  
 The ocean sings its ancient tome.
