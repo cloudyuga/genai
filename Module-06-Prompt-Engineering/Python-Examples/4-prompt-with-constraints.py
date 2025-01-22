@@ -17,7 +17,3 @@ response = client.chat.completions.create(
     max_tokens=150
 )
 print(response.choices[0].message.content)
-
-Output:
-python .\prompt-with-constraints.py
-Climate change refers to long-term alterations in temperature, precipitation, and other atmospheric conditions, primarily attributed to human activities such as fossil fuel combustion and deforestation. It poses significant environmental challenges, including increased frequency of extreme weather events, rising sea levels, and biodiversity loss, necessitating urgent global cooperation to mitigate its effects.
