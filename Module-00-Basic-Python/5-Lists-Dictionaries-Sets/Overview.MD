@@ -1,4 +1,4 @@
-# introduction to lists, dictionaries, and sets in Python
+# Introduction to Lists, Dictionaries, and Sets in Python
 
 ## 1. Lists
 A list is an ordered collection of items. You can think of it as a sequence of things, like a shopping list or a list of favorite movies. In Python, lists are created by putting items inside square brackets [], separated by commas.
