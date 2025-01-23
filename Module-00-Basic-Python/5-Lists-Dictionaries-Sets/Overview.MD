@@ -91,3 +91,13 @@ print(colors)  # Output: {'red', 'blue', 'yellow'}
 ```
 - Sets are unordered: There’s no specific order to items.
 - Sets store unique items: Duplicate items are not allowed.
+
+---
+
+## Summary
+
+| **Concept**       | **Description**                                                                                     | **Key Features**                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Lists**          | Ordered, mutable collection of items, useful for maintaining sequences.                            | - Items stay in the order added. <br> - Supports item addition, removal, and modification.         |
+| **Dictionaries**   | Unordered, mutable collection of key-value pairs, used for associating keys with values.            | - Access values using keys. <br> - Use `get()` method to avoid KeyErrors and provide default values. |
+| **Sets**           | Unordered collection of unique items, useful for storing non-duplicate elements.                   | - Ensures uniqueness of items. <br> - Does not maintain order. <br> - Supports addition and removal of items. |
