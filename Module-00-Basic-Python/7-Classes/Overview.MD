@@ -116,3 +116,10 @@ current_year = 2025
 car_age = my_car.car_age(current_year)
 print(f"The car is {car_age} years old.")  # Output: The car is 10 years old.
 ```
+---
+## Summary of the Steps
+- Define a class with the class keyword.
+- Add the __init__ method to set initial attributes when an object is created.
+- Use self in methods to access attributes and other methods of the instance.
+- Create an object (instance) by calling the class with any required arguments.
+- Access attributes and call methods using the object.
