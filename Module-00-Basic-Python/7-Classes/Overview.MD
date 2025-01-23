@@ -68,7 +68,7 @@ Once we have an object, we can access its attributes and call its methods.
 ```python
 print(my_dog.name)  # Output: Tommy
 print(my_dog.age)   # Output: 5
-my_dog.speak()      # Output: Buddy says woof!
+my_dog.speak()      # Output: Tommy says woof!
 ```
 ---
 ## Example
