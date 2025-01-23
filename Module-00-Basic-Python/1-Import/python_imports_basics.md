@@ -51,7 +51,7 @@ from math import sqrt  # Import only the sqrt function from math
 # Directly use sqrt without the math. prefix
 result = sqrt(16)
 print(result)  # Output: 4.0
-
+```
 #### Advantages:
 Saves typing and improves readability when frequently using a specific function or class.
 Loads only the specified items instead of the entire module, which can be memory-efficient.
@@ -70,7 +70,7 @@ import numpy as np  # Import numpy module with alias np
 # Use np instead of numpy
 array = np.array([1, 2, 3])
 print(array)  # Output: [1 2 3]
-
+```
 #### Advantages:
 Makes code more concise, especially for libraries with long names like pandas, numpy, or matplotlib.
 
