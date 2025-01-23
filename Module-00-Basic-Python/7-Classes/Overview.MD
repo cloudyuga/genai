@@ -70,4 +70,49 @@ print(my_dog.name)  # Output: Buddy
 print(my_dog.age)   # Output: 3
 my_dog.speak()      # Output: Buddy says woof!
 ```
+---
 ## Example
+#### car Class
+```python
+class Car:
+    # Constructor to initialize the car's attributes
+    def __init__(self, brand, model, year, mileage):
+        self.brand = brand  # Car's brand (e.g., Toyota, Honda)
+        self.model = model  # Car's model (e.g., Corolla, Civic)
+        self.year = year    # Manufacturing year
+        self.mileage = mileage  # Mileage in kilometers
+
+    # Method to display car details
+    def display_info(self):
+        print(f"Car Details: {self.brand} {self.model}, Year: {self.year}, Mileage: {self.mileage} km")
+
+    # Method to update the mileage
+    def update_mileage(self, new_mileage):
+        if new_mileage >= self.mileage:
+            self.mileage = new_mileage
+            print(f"Updated mileage: {self.mileage} km")
+        else:
+            print("Mileage cannot be rolled back!")
+
+    # Method to calculate the car's age
+    def car_age(self, current_year):
+        return current_year - self.year
+
+
+# Create an instance of the Car class
+my_car = Car("Toyota", "Corolla", 2015, 75000)
+
+# Display car details
+my_car.display_info()  # Output: Car Details: Toyota Corolla, Year: 2015, Mileage: 75000 km
+
+# Update the mileage
+my_car.update_mileage(80000)  # Output: Updated mileage: 80000 km
+
+# Attempt to roll back mileage (will fail)
+my_car.update_mileage(70000)  # Output: Mileage cannot be rolled back!
+
+# Calculate and display the car's age
+current_year = 2025
+car_age = my_car.car_age(current_year)
+print(f"The car is {car_age} years old.")  # Output: The car is 10 years old.
+```
