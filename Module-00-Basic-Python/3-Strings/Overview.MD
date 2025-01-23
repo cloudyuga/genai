@@ -81,7 +81,9 @@ that contains multiple lines,
 and we don't need to use a backslash.
 It also handles quotes, like "this one" and 'that one'.
 ```
+
 Triple quotes allow for direct line breaks, and you can include both single (') and double (") quotes.
+
 ---
 
 ## 3. Triple-Quoted Strings as Docstrings
