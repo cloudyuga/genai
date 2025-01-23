@@ -29,6 +29,45 @@ class Dog:
 ```
 Here’s what’s happening:
 
-def __init__(self, name, age): defines the __init__ method.
-self represents the instance of the class (the specific Dog object we’re creating).
-self.name = name sets the name attribute for the object, and self.age = age sets the age attribute.
+- def __init__(self, name, age): defines the __init__ method.
+- self represents the instance of the class (the specific Dog object we’re creating).
+- self.name = name sets the name attribute for the object, and self.age = age sets the age attribute.
+
+## Using self
+self is a reference to the current instance of the class. It lets you access the instance’s attributes and methods from within the class.
+
+When you call a method on an object, Python automatically passes the object as the first argument, which we call self. You don’t have to explicitly pass it; Python does it for you.
+
+## Adding a Method to Our Class
+Now, let’s add a simple method to make our dog "speak."
+```python
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def speak(self):
+        print(f"{self.name} says woof!")
+```
+- speak is a method, just like a function, but it’s defined within a class.
+- self is used as the first parameter, allowing the method to access the object's attributes.
+
+## Creating an Object (Instance) of the Class
+To create an object, we call the class like a function, passing in any required arguments. Let’s make a dog named “Buddy” who is 3 years old.
+```python
+my_dog = Dog("Buddy", 3)
+```
+Here’s what happens:
+
+- Dog("Buddy", 3) calls the __init__ method.
+- Inside __init__, self.name is set to "Buddy", and self.age is set to 3.
+- Now my_dog is an instance of Dog with its own unique name and age.
+
+## Using the Object’s Methods and Attributes
+Once we have an object, we can access its attributes and call its methods.
+```python
+print(my_dog.name)  # Output: Buddy
+print(my_dog.age)   # Output: 3
+my_dog.speak()      # Output: Buddy says woof!
+```
+## Example
