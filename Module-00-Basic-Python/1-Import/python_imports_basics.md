@@ -30,8 +30,10 @@ import math  # Import the math module
 # Use the math module's sqrt function
 result = math.sqrt(16)
 print(result)  # Output: 4.0
-
+```
 Here, math.sqrt(16) specifies that the sqrt function comes from the math module.
+
+---
 
 #### Advantages:
 Keeps your code organized by showing the module name for each function.
