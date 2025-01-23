@@ -53,21 +53,21 @@ class Dog:
 - self is used as the first parameter, allowing the method to access the object's attributes.
 
 ## Creating an Object (Instance) of the Class
-To create an object, we call the class like a function, passing in any required arguments. Let’s make a dog named “Buddy” who is 3 years old.
+To create an object, we call the class like a function, passing in any required arguments. Let’s make a dog named “Tommy” who is 5 years old.
 ```python
-my_dog = Dog("Buddy", 3)
+my_dog = Dog("Tommy", 5)
 ```
 Here’s what happens:
 
-- Dog("Buddy", 3) calls the __init__ method.
-- Inside __init__, self.name is set to "Buddy", and self.age is set to 3.
+- Dog("Tommy", 5) calls the __init__ method.
+- Inside __init__, self.name is set to "Tommy", and self.age is set to 5.
 - Now my_dog is an instance of Dog with its own unique name and age.
 
 ## Using the Object’s Methods and Attributes
 Once we have an object, we can access its attributes and call its methods.
 ```python
-print(my_dog.name)  # Output: Buddy
-print(my_dog.age)   # Output: 3
+print(my_dog.name)  # Output: Tommy
+print(my_dog.age)   # Output: 5
 my_dog.speak()      # Output: Buddy says woof!
 ```
 ---
