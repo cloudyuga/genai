@@ -72,7 +72,7 @@ print(file_path)
 if file_path.exists():
     print(f"{file_path} exists!")
 ```
-
+---
 ## 5. Listing Files in a Directory
 To list files matching a pattern (e.g., all .txt files), use glob.glob:
 ```python
@@ -89,7 +89,7 @@ For subdirectories, use the ** wildcard with the recursive=True argument:
 all_txt_files = glob.glob('**/*.txt', recursive=True)
 print(all_txt_files)
 ```
-
+---
 ## 6. Putting It All Together
 
 Here’s a complete example that:
