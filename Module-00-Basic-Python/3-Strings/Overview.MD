@@ -75,7 +75,8 @@ It also handles quotes, like "this one" and 'that one'."""
 print(multi_line_quote)
 ```
 #### Output:
-```This is a string
+```
+This is a string
 that contains multiple lines,
 and we don't need to use a backslash.
 It also handles quotes, like "this one" and 'that one'.
@@ -102,7 +103,7 @@ def greet(name):
 greet(Alice):
 ```
 #### Output:
-Hello, Alice!
+```Hello, Alice!```
 
 #### Purpose: 
 Docstrings serve as documentation for your code, helping others understand what the function does, what inputs it takes, and what output it produces.
