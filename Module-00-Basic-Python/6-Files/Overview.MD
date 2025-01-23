@@ -1,6 +1,6 @@
 # Working with Files
 
-Python makes it easy to work with files for reading and writing. This tutorial covers how to use the open() function, handle encoding (important for Windows users), and utilize context managers. We'll also touch on handling file paths in a platform-independent way and list files with glob.
+Python makes it easy to work with files for reading and writing. We will cover how to use the open() function, handle encoding (important for Windows users), and utilize context managers. We'll also touch on handling file paths in a platform-independent way and list files with glob.
 
 ## 1. Using the open() Function
 The open() function is used to open a file for reading, writing, or other operations. Its basic syntax is:
