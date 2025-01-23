@@ -1,6 +1,6 @@
 # Understanding Python Import Statements  
 
-Python's import system allows you to use modules and packages, enabling code reuse and organization. This tutorial covers how to import Python code from standard libraries, third-party packages, and your own files.
+Python's import system allows you to use modules and packages, enabling code reuse and organization. We will cover how to import Python code from standard libraries, third-party packages, and your own files.
 
 ## What is an Import?
 An import brings in code from another module (file) or package so you can use it in your current program. Modules are single Python files (.py), while packages are collections of modules organized into directories.
@@ -19,8 +19,8 @@ This saves you from having to write common functions or features yourself, as Py
 - **Reusability**: Avoid rewriting common functions or features.  
 - **Efficiency**: Leverage built-in or third-party solutions.  
 - **Modularity**: Organize and manage code more effectively.  
-
 ---
+
 ## Types of Imports
 
 ### 1. Importing an Entire Module
@@ -30,8 +30,8 @@ To use all the functions, classes, or variables in a module, import the module:
 import math
 
 # Using the math module
-result = math.sqrt(16)
-print(result)  # Output: 4.0
+result = math.sqrt(36)
+print(result)  # Output: 6.0
 ```
 
 ### 2. Importing Specific Components
@@ -73,7 +73,6 @@ from math import *
 result = sin(0.5) + cos(0.5)
 print(result)
 ```
-
 ---
 ## Importing Your Own Files
 You can import functions, classes, or variables from your own Python files.
@@ -101,7 +100,6 @@ from utilities import greet
 message = greet("Alice")
 print(message)  # Output: Hello, Alice!
 ```
-
 ---
 ## Importing from Subdirectories
 When your files are organized in subdirectories, use packages. A package is a directory containing an `__init__.py` file (can be empty).
@@ -129,7 +127,6 @@ from helpers.string_utils import reverse_string
 reversed_text = reverse_string("Python")
 print(reversed_text)  # Output: nohtyP
 ```
-
 ---
 ## Relative Imports
 Relative imports are used within packages to refer to sibling or parent modules.
@@ -164,7 +161,6 @@ from package.module_b import value
 
 print(value)  # Output: 42
 ```
-
 ---
 ## Handling Import Errors
 If Python cannot find the module, you may get an `ImportError`. To resolve this:
@@ -179,7 +175,6 @@ You can also modify the search path dynamically:
 import sys
 sys.path.append("/path/to/your/module")
 ```
-
 ---
 ## Importing Third-Party Libraries
 Install third-party libraries using `pip` and import them:
@@ -194,7 +189,6 @@ import requests
 response = requests.get("https://api.example.com")
 print(response.status_code)
 ```
-
 ---
 ## Best Practices for Imports
 - Use specific imports (`from module import x`) when possible.
@@ -215,13 +209,4 @@ from my_project.utilities import greet
 ```
 ---
 ## Conclusion
-Understanding imports is essential for writing modular and maintainable Python code. Use the appropriate import style based on your needs, and organize your code with modules and packages for better scalability.
-
-
 By understanding the import statement and its variations, you can write better-structured Python programs that are clean, efficient, and easy to maintain.
-
-
-
-
-
-
