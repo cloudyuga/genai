@@ -33,8 +33,6 @@ print(result)  # Output: 4.0
 ```
 Here, math.sqrt(16) specifies that the sqrt function comes from the math module.
 
----
-
 #### Advantages:
 Keeps your code organized by showing the module name for each function.
 
@@ -74,6 +72,7 @@ print(array)  # Output: [1 2 3]
 #### Advantages:
 Makes code more concise, especially for libraries with long names like pandas, numpy, or matplotlib.
 
+---
 
 ## Key Differences Between `import xxx` and `from xxx import yyy`
 
@@ -84,6 +83,7 @@ Makes code more concise, especially for libraries with long names like pandas, n
 | **Memory Usage**      | May load the entire module              | Loads only the specified items           |
 | **Conflict Handling** | No conflicts due to prefix              | Possible name conflicts without prefix   |
 
+---
 
 ## Summary 
 
