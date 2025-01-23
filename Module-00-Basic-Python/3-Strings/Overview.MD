@@ -60,6 +60,8 @@ here without any breaks."
 print(multi_line_string)
 ```
 This prints as a single line because the backslash tells Python to ignore the line break.
+#### Output:
+```This is a string that is too long to fit on one line, so we continue it here without any breaks.```
 
 ### Triple Quotes `'''` or `"""`
 
@@ -71,6 +73,12 @@ that contains multiple lines,
 and we don't need to use a backslash.
 It also handles quotes, like "this one" and 'that one'."""
 print(multi_line_quote)
+```
+#### Output:
+```This is a string
+that contains multiple lines,
+and we don't need to use a backslash.
+It also handles quotes, like "this one" and 'that one'.
 ```
 Triple quotes allow for direct line breaks, and you can include both single (') and double (") quotes.
 ---
@@ -90,6 +98,11 @@ def greet(name):
     str: A greeting message.
     """
     return f"Hello, {name}!"
+
+greet(Alice):
 ```
+#### Output:
+Hello, Alice!
+
 #### Purpose: 
 Docstrings serve as documentation for your code, helping others understand what the function does, what inputs it takes, and what output it produces.
