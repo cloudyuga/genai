@@ -81,9 +81,13 @@ Here’s what’s happening in {current_date:%B %d, %Y}:
 
 ---
 
-## Summary of Common Formatting Options
-- {value:.2f}: Format as a float with 2 decimal places.
-- {value:,.2f}: Add commas as thousands separators, with 2 decimal places.
-- {date:%B %d, %Y}: Format a datetime object to display month, day, and year.
+## Summary
 
-With f-strings, you can format values right in the string, making your code cleaner and easier to read!
+| **Feature**              | **Description**                                                                                                     |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------|
+| **Basic f-string Usage**  | Insert variables and expressions directly into strings using curly braces `{}`.                                     |
+| **Expressions in f-strings** | Supports calculations and expressions directly within the curly braces (e.g., `{width * height}`).                  |
+| **Number Formatting**     | Use format specifiers like `:,.2f` to add commas for thousands and specify decimal places.                          |
+| **Date Formatting**       | Format `datetime` objects using specifiers such as `%B` for month, `%d` for day, and `%Y` for year.                 |
+| **Advantages**            | Simplifies code by integrating variable values, expressions, and formatting directly into the string for better readability. |
+
