@@ -61,15 +61,15 @@ Instead of just performing an action, a function can also return a result that c
 
 #### Example:
 ```python
-def add(a, b):
-    return a + b
+def mul(a, b):
+    return a * b
 ```
 
-This function adds two numbers and returns their sum.
+This function multiply two numbers and returns their value.
 
 ```python
-result = add(5, 10)
-print(result)  # Output: 15
+result = mul(5, 10)
+print(result)  # Output: 50
 ```
 #### Advantages:
 - Useful when you need to perform a calculation and use the result later.
