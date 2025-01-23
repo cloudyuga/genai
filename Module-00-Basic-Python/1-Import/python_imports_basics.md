@@ -75,7 +75,7 @@ print(array)  # Output: [1 2 3]
 Makes code more concise, especially for libraries with long names like pandas, numpy, or matplotlib.
 
 
-### Key Differences Between `import xxx` and `from xxx import yyy`
+## Key Differences Between `import xxx` and `from xxx import yyy`
 
 | **Aspect**           | **import xxx**                          | **from xxx import yyy**                  |
 |-----------------------|-----------------------------------------|------------------------------------------|
@@ -85,7 +85,7 @@ Makes code more concise, especially for libraries with long names like pandas, n
 | **Conflict Handling** | No conflicts due to prefix              | Possible name conflicts without prefix   |
 
 
-### Summary 
+## Summary 
 
 | Statement              | What It Does                                      | Usage Example           |
 |------------------------|--------------------------------------------------|-------------------------|
