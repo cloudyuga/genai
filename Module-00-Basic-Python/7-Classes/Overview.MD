@@ -1,4 +1,3 @@
-
 # Classes in Python
 
 ## What is a Class?
@@ -157,7 +156,7 @@ print(f"The book is {book_age} years old.")  # Output: The book is 75 years old.
 - `book_age` calculates and returns the age of the book based on the current year.
 
 ---
-## Example of car Class
+## Example: `car` Class
 ```python
 class Car:
     # Constructor to initialize the car's attributes
