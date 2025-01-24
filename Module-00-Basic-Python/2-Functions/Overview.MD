@@ -115,3 +115,145 @@ greet("Bob")  # Output: Hello, Bob!
 | `def function_name(arg="default")`  | Defines a function with default argument(s) | `def greet(name="stranger")`        |
 
 By understanding function definitions and their variations, you can structure your Python programs to be more organized, reusable, and easier to maintain.
+
+
+
+# Python Functions Tutorial
+
+Functions are a fundamental building block in Python, allowing you to organize your code, reuse logic, and make it more readable and maintainable. This tutorial covers the basics of defining and using Python functions.
+
+## 1. What is a Function?
+A function is a block of reusable code that performs a specific task. Functions can accept inputs, process them, and return outputs.
+
+### Syntax:
+```python
+def function_name(parameters):
+    """Docstring (optional): Describes the function"""
+    # Function body
+    return result
+```
+
+## 2. Defining a Function
+You can define a function using the `def` keyword followed by the function name and parentheses.
+
+### Example:
+```python
+def greet():
+    """This function prints a greeting message."""
+    print("Hello, World!")
+```
+
+### Calling the Function:
+```python
+greet()  # Output: Hello, World!
+```
+
+## 3. Function Parameters
+Functions can accept parameters to make them more dynamic.
+
+### Example:
+```python
+def greet_person(name):
+    """Greets a person by their name."""
+    print(f"Hello, {name}!")
+
+greet_person("Alice")  # Output: Hello, Alice!
+```
+
+### Default Parameters:
+You can assign default values to parameters.
+```python
+def greet_person(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet_person()         # Output: Hello, Guest!
+greet_person("Bob")    # Output: Hello, Bob!
+```
+
+## 4. Return Statement
+Functions can return a value using the `return` keyword.
+
+### Example:
+```python
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(3, 5)
+print(result)  # Output: 8
+```
+
+## 5. Scope and Lifetime of Variables
+Variables defined inside a function are local to that function and cannot be accessed outside.
+
+### Example:
+```python
+def calculate_area(radius):
+    pi = 3.14  # Local variable
+    return pi * radius ** 2
+
+# print(pi)  # This will raise a NameError
+```
+
+## 6. *args and **kwargs
+Python provides special syntax to handle arbitrary numbers of arguments.
+
+### *args (Non-Keyword Arguments):
+Use `*args` to pass a variable number of positional arguments.
+```python
+def sum_all(*args):
+    return sum(args)
+
+print(sum_all(1, 2, 3, 4))  # Output: 10
+```
+
+### **kwargs (Keyword Arguments):
+Use `**kwargs` to pass a variable number of keyword arguments.
+```python
+def print_details(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_details(name="Aarya", age=25, city="New Delhi")
+```
+
+## 7. Lambda Functions
+Lambda functions are anonymous functions defined using the `lambda` keyword. They are often used for short, simple operations.
+
+### Example:
+```python
+square = lambda x: x ** 2
+print(square(5))  # Output: 25
+```
+
+## 8. Docstrings
+Use docstrings to describe what your function does. Enclose them in triple quotes (`"""`).
+
+### Example:
+```python
+def multiply(a, b):
+    """Multiplies two numbers and returns the result."""
+    return a * b
+
+help(multiply)
+```
+
+## 9. Recursive Functions
+A function can call itself. This is known as recursion. Be cautious to include a base case to avoid infinite loops.
+
+### Example:
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+```
+
+## 10. Best Practices
+- Use descriptive names for functions and parameters.
+- Keep functions focused on a single task.
+- Write docstrings for clarity.
+- Avoid side effects when possible.
+
+Happy coding!
