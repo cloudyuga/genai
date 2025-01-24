@@ -1,5 +1,4 @@
 from together import Together
-# from helper import get_together_api_key
 from dotenv import load_dotenv
 import os
 
@@ -8,7 +7,6 @@ load_dotenv()
 api_key = os.getenv("TOGETHER_API_KEY")
 
 # Initialize Together client
-#client = Together(api_key=get_together_api_key())
 client = Together(api_key=api_key)
 
 # Set the content policy for guardrails
