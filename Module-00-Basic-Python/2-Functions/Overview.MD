@@ -116,6 +116,7 @@ Lambda functions are anonymous, short functions created using the `lambda` keywo
 square = lambda x: x ** 2
 print(square(5))  # Output: 25
 ```
+
 Lambda functions are short, anonymous functions in Python that are often used for simple operations. While they can make code more concise, overusing them can lead to reduced readability, especially in complex scenarios. It's generally better to use regular function definitions with def for clarity and maintainability.
 ---
 ## 8. Docstrings
