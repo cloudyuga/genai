@@ -9,13 +9,13 @@ In Python, f-strings (formatted string literals) make it easy to insert variable
 Here’s a simple example to get you started:
 
 ```python
-name = "Alice"
-age = 30
+name = "Aarya"
+age = 20
 message = f"Hello, my name is {name} and I am {age} years old."
 print(message)
 ```
 #### Output:
-```Hello, my name is Alice and I am 30 years old.```
+```Hello, my name is Aarya and I am 20 years old.```
 
 Here, {name} is replaced by the value of name, and {age} by the value of age.
 
