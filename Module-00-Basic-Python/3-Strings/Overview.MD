@@ -1,6 +1,6 @@
 # Python Strings: An Overview
 
-Python strings are sequences of characters and offer many useful methods and tools for manipulation. Below is a detailed explanation of string operations and their applications.
+Python strings are sequences of characters that come with a variety of powerful methods and tools for manipulation. Below is a detailed explanation of string operations and their applications.
 
 ---
 
