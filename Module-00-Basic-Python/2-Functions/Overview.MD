@@ -1,6 +1,7 @@
 # Python Functions
 
 Functions are essential in Python programming, allowing you to organize your code, reuse logic, and enhance readability and maintainability. This page provides a comprehensive understanding of Python functions, covering their syntax, usage, and advanced features.
+
 ---
 ## Table of Contents
 1. [What is a Function?](#1-what-is-a-function)
