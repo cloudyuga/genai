@@ -1,7 +1,7 @@
 # Python Functions
 
 Functions are essential in Python programming, allowing you to organize your code, reuse logic, and enhance readability and maintainability. This page provides a comprehensive understanding of Python functions, covering their syntax, usage, and advanced features.
-
+---
 ## Table of Contents
 1. [What is a Function?](#1-what-is-a-function)
 2. [Defining a Function](#2-defining-a-function)
@@ -13,11 +13,11 @@ Functions are essential in Python programming, allowing you to organize your cod
 8. [Docstrings](#8-docstrings)
 9. [Recursive Functions](#9-recursive-functions)
 10. [Best Practices](#10-best-practices)
-
+---
 ## 1. What is a Function?
 A function is a reusable block of code that performs a specific task. Functions can accept inputs (parameters), process them, and return outputs.
 
-### Syntax:
+#### Syntax:
 ```python
 def function_name(parameters):
     """Docstring (optional): Describes the function"""
@@ -28,13 +28,13 @@ def function_name(parameters):
 ## 2. Defining and calling a Function 
 Use the `def` keyword to define a function, followed by the function name and parentheses. Optionally, include a docstring to describe its purpose.
 
-### Example of Function Without Arguments:
+#### Example of Function Without Arguments:
 ```python
 def greet():
     """This function prints a greeting message."""
     print("Hello, World!")
 ```
-### Calling a Function
+#### Calling a Function
 To execute a function, we call it by its name followed by parentheses (). If the function accepts arguments, you must pass the required values inside the parentheses.  
 ```python
 greet()  # Output: Hello, World!
@@ -43,7 +43,7 @@ greet()  # Output: Hello, World!
 ## 3. Function Parameters
 Functions can accept parameters to make them more dynamic and reusable.
 
-### Positional Parameters:
+#### Positional Parameters:
 ```python
 def greet_person(name):
     """Greets a person by their name."""
@@ -52,7 +52,7 @@ def greet_person(name):
 greet_person("Alice")  # Output: Hello, Alice!
 ```
 
-### Default Parameters:
+#### Default Parameters:
 Provide default values for parameters to make them optional.
 ```python
 def greet_person(name="Guest"):
@@ -65,7 +65,7 @@ greet_person("Bob")    # Output: Hello, Bob!
 ## 4. Return Statement
 The `return` keyword allows a function to output a value.
 
-### Example:
+#### Example:
 ```python
 def add_numbers(a, b):
     return a + b
@@ -77,7 +77,7 @@ print(result)  # Output: 8
 ## 5. Scope and Lifetime of Variables
 Variables inside a function are local to that function and exist only during its execution.
 
-### Example:
+#### Example:
 ```python
 def calculate_area(radius):
     pi = 3.14  # Local variable
@@ -89,7 +89,7 @@ def calculate_area(radius):
 ## 6. Special Parameters: *args and **kwargs
 Python provides flexible syntax for handling variable numbers of arguments.
 
-### *args (Non-Keyword Arguments):
+#### *args (Non-Keyword Arguments):
 Use `*args` to pass a variable number of positional arguments.
 ```python
 def sum_all(*args):
@@ -98,7 +98,7 @@ def sum_all(*args):
 print(sum_all(1, 2, 3, 4))  # Output: 10
 ```
 
-### **kwargs (Keyword Arguments):
+#### **kwargs (Keyword Arguments):
 Use `**kwargs` to pass a variable number of keyword arguments.
 ```python
 def print_details(**kwargs):
@@ -111,7 +111,7 @@ print_details(name="Aarya", age=25, city="New Delhi")
 ## 7. Lambda Functions
 Lambda functions are anonymous, short functions created using the `lambda` keyword. They are often used for simple operations.
 
-### Example:
+#### Example:
 ```python
 square = lambda x: x ** 2
 print(square(5))  # Output: 25
@@ -123,7 +123,7 @@ Lambda functions are short, anonymous functions in Python that are often used fo
 ## 8. Docstrings
 Docstrings describe the purpose and behavior of a function. Use triple quotes (`"""`) to write them.
 
-### Example:
+#### Example:
 ```python
 def multiply(a, b):
     """Multiplies two numbers and returns the result."""
@@ -135,7 +135,7 @@ help(multiply)
 ## 9. Recursive Functions
 A function can call itself to solve problems iteratively. Always include a base case to avoid infinite recursion.
 
-### Example:
+#### Example:
 ```python
 def factorial(n):
     if n == 0:
