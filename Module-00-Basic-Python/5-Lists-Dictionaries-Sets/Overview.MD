@@ -5,20 +5,21 @@ A list is an ordered collection of items. You can think of it as a sequence of t
 
 #### Example
 ```python
-# Creating a list of fruits
-fruits = ["apple", "banana", "cherry"]
+```python
+# Creating a list of cities
+cities = ["London", "Paris", "Tokyo"]
 
 # Accessing items
-print(fruits[0])  # Output: apple
-print(fruits[1])  # Output: banana
+print(cities[0])  # Output: London
+print(cities[2])  # Output: Tokyo
 
 # Adding an item
-fruits.append("orange")
-print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']
+cities.append("New York")
+print(cities)  # Output: ['London', 'Paris', 'Tokyo', 'New York']
 
 # Removing an item
-fruits.remove("banana")
-print(fruits)  # Output: ['apple', 'cherry', 'orange']
+cities.remove("Paris")
+print(cities)  # Output: ['London', 'Tokyo', 'New York']
 ```
 - Lists are ordered: The items stay in the order you add them.
 - Lists are mutable: You can change items in a list, add new items, or remove items.
@@ -31,24 +32,24 @@ A dictionary (or dict) is a collection of key-value pairs. Each item in a dictio
 
 #### Example:
 ```python
-# Creating a dictionary with some information about a person
-person = {
-    "name": "Alice",
-    "age": 25,
-    "city": "New York"
+# Creating a dictionary with details about a book
+book = {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949
 }
 
 # Accessing values by key
-print(person["name"])  # Output: Alice
-print(person["age"])   # Output: 25
+print(book["title"])  # Output: 1984
+print(book["year"])   # Output: 1949
 
 # Adding a new key-value pair
-person["job"] = "Engineer"
-print(person)  # Output: {'name': 'Alice', 'age': 25, 'city': 'New York', 'job': 'Engineer'}
+book["genre"] = "Dystopian"
+print(book)  # Output: {'title': '1984', 'author': 'George Orwell', 'year': 1949, 'genre': 'Dystopian'}
 
 # Changing a value
-person["city"] = "San Francisco"
-print(person)  # Output: {'name': 'Alice', 'age': 25, 'city': 'San Francisco', 'job': 'Engineer'}
+book["year"] = 1950
+print(book)  # Output: {'title': '1984', 'author': 'George Orwell', 'year': 1950, 'genre': 'Dystopian'}
 
 ```
 
@@ -62,11 +63,11 @@ The get() method lets you access values in a dictionary by key. If the key doesn
 print following details using above example
 ```python
 # Using get() without a default value
-print(person.get("name"))  # Output: Alice
-print(person.get("country"))  # Output: None (since 'country' is not a key)
+print(book.get("title"))  # Output: 1984
+print(book.get("publisher"))  # Output: None (key doesn't exist)
 
 # Using get() with a default value
-print(person.get("country", "USA"))  # Output: USA (default value provided)
+print(book.get("publisher", "Not available"))  # Output: Not available
 ```
 ---
 ## 3. Sets
@@ -74,20 +75,20 @@ A set is an unordered collection of unique items. Sets are useful when you want 
 
 #### Example
 ```python
-# Creating a set of colors
-colors = {"red", "green", "blue"}
+# Creating a set of sports
+sports = {"football", "cricket", "tennis"}
 
 # Adding an item
-colors.add("yellow")
-print(colors)  # Output: {'red', 'green', 'blue', 'yellow'}
+sports.add("basketball")
+print(sports)  # Output: {'football', 'cricket', 'tennis', 'basketball'}
 
 # Trying to add a duplicate item
-colors.add("red")
-print(colors)  # Output: {'red', 'green', 'blue', 'yellow'} (no duplicate)
+sports.add("football")
+print(sports)  # Output: {'football', 'cricket', 'tennis', 'basketball'} (no duplicate added)
 
 # Removing an item
-colors.remove("green")
-print(colors)  # Output: {'red', 'blue', 'yellow'}
+sports.remove("tennis")
+print(sports)  # Output: {'football', 'cricket', 'basketball'}
 ```
 - Sets are unordered: There’s no specific order to items.
 - Sets store unique items: Duplicate items are not allowed.
