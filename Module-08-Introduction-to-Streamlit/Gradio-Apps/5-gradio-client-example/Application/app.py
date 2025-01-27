@@ -15,7 +15,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 # File Path (replace "sample.pdf" with the name of your PDF file)
-PDF_FILE = "Resume_Pratiksha.pdf" #"Company_HR_Policy.pdf"  # Ensure this file is in the same directory as app.py
+PDF_FILE = "sample.pdf" #"Company_HR_Policy.pdf"  # Ensure this file is in the same directory as app.py
 
 # Utility Functions
 def load_pdf(file_path):
