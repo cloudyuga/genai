@@ -1,0 +1,8 @@
+PyGithub
+langchain
+langchain-community
+langchain-text-splitters
+openai
+python-dotenv
+sentence-transformers
+chromadb
