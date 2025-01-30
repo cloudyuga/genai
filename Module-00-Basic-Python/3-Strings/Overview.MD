@@ -114,7 +114,7 @@ def greet(name):
     """
     return f"Hello, {name}!"
 
-greet(Alice):
+greet(Alice)
 ```
 #### Output:
 ```Hello, Alice!```
