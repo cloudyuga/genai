@@ -23,17 +23,19 @@ file = open('filename.txt', 'r', encoding='utf-8')
 ## 2. Using Context Managers
 The best practice for working with files in Python is to use a context manager with the with statement. It automatically closes the file when you're done.
 
+#### Example: Writing to a File
+```python
+with open('output.txt', 'w', encoding='utf-8') as file:
+    file.write("Hello, World!")
+```
+
 #### Example: Reading a File
 ```python
 with open('example.txt', 'r', encoding='utf-8') as file:
     content = file.read()
     print(content)
 ```
-#### Example: Writing to a File
-```python
-with open('output.txt', 'w', encoding='utf-8') as file:
-    file.write("Hello, World!")
-```
+
 #### Example: Appending to a File
 ```python
 with open('output.txt', 'a', encoding='utf-8') as file:
