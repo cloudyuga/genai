@@ -1,6 +1,6 @@
 # f-Strings (Formatted String Literals) in Python
 
-In Python, f-strings (formatted string literals) make it easy to insert variables and expressions directly into strings. They were introduced in Python 3.6 and are prefixed by an `f` (or `F`) before the string. With f-strings, you can easily include variables and expressions inside curly braces `{}` in a string, and Python will replace those with the actual values.
+In Python, formatted string literals make it easy to insert variables and expressions directly into strings. They were introduced in Python 3.6 and are prefixed by an `f` (or `F`) before the string. With f-strings, you can easily include variables and expressions inside curly braces `{}` in a string, and Python will replace those with the actual values.
 
 ---
 
