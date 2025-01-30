@@ -11,22 +11,30 @@ The yield keyword is used to return values from a generator function without los
 Let's create a generator function that yields numbers from 1 to 5:
 
 ```python
-def simple_generator():
-    print("Start")
-    yield 1
-    print("Yielded 1")
-    yield 2
-    print("Yielded 2")
-    yield 3
-    print("Yielded 3")
-    
-# Calling the generator function
-gen = simple_generator()
+def number_generator():
+    for i in range(1, 10):
+        yield i
+# Create a generator
+gen = number_generator()
 
-print(next(gen))  # Output: Start \n 1
-print(next(gen))  # Output: Yielded 1 \n 2
-print(next(gen))  # Output: Yielded 2 \n 3
-print(next(gen))  # Raises StopIteration
+# Use a loop to get values from the generator
+for number in gen:
+    print(number)
+```
+
+#### using next()
+```python
+gen = number_generator()
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+#print(next(gen))   # This will generate StopIteration Error
 ```
 ---
 ## 4. Using a Generator in a Loop
