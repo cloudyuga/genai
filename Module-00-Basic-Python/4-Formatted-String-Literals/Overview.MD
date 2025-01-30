@@ -4,7 +4,7 @@ In Python, f-strings (formatted string literals) make it easy to insert variable
 
 ---
 
-## Basic f-string Example
+## 1. Basic f-string Example
 
 Here’s a simple example to get you started:
 
@@ -21,7 +21,7 @@ Here, {name} is replaced by the value of name, and {age} by the value of age.
 
 ---
 
-## Example with Expressions
+## 2. Example with Expressions
 
 You can even include expressions (like calculations) within the curly braces:
 ```python
@@ -35,7 +35,7 @@ print(area_message)
 
 ---
 
-## Formatting Numbers
+## 3. Formatting Numbers
 
 f-strings allow you to format numbers directly inside the string. For example, you can format a number with commas and set the number of decimal places.
 
@@ -58,7 +58,7 @@ This formats the number to two decimal places and includes commas to make it mor
 
 ---
 
-## Formatting Dates
+## 4. Formatting Dates
 
 You can also use f-strings to format dates. For this, you’ll typically use the datetime module.
 
