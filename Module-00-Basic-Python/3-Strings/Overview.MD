@@ -18,7 +18,7 @@ The length counts every character, including spaces and punctuation.
 #### `lower()` - Returns the string in lowercase
 ```python
 text = "Hello, world!"
-print(text.lower())     # "Output: Hello, world!"
+print(text.lower())     # "Output: hello, world!"
 ```
 
 #### `upper()` - Returns the string in uppercase
