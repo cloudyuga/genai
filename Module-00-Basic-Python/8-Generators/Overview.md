@@ -112,8 +112,9 @@ for line in read_large_file("large_file.txt"):
 - Streaming data processing (e.g., reading API responses in chunks).
 - Generating an infinite stream of data.
 ---
-## 10. Conclusion
-- Generators use yield instead of return to return values one at a time.
-- They pause execution and resume from where they left off.
-- They are memory efficient and useful for large data processing.
-- yield from simplifies delegation to sub-generators.
+## 10. Benefits of Generators
+- Memory Efficiency: They don’t store all values in memory; they generate each value only when needed.
+- Lazy Evaluation: Ideal for large datasets, as they compute values only as required.
+- Simplifies Code: They’re a great way to handle sequences that are calculated on-the-fly without needing complex data structures.
+Generators are powerful for handling large or potentially infinite datasets efficiently and elegantly in Python.
+
