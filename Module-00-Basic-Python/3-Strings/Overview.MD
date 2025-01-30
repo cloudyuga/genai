@@ -35,9 +35,9 @@ print(new_greeting)  # Output: "Hello, Python!"
 ```
 #### `strip()` - Removes any whitespace (spaces, newlines) from the beginning and end of the string.
 ```python
-messy_text = "   Hello, world!   "
-clean_text = messy_text.strip()
-print(clean_text)  # Output: "Hello, world!"
+messy_text = "**Hello, world!"
+clean_text = messy_text.strip('*')
+print(clean_text)   # Output: "Hello, world!"
 ```
 #### `split()` - Divides a string into a list of substrings based on a specified separator (default is whitespace).
 ```python
