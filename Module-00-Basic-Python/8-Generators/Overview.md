@@ -8,21 +8,25 @@ The yield keyword is used to return values from a generator function without los
 
 ---
 ## 3. Creating a Simple Generator Function
-Let's create a generator function that yields numbers from 1 to 5:
+Let's create a generator function that yields numbers from 1 to 9:
 
 ```python
 def number_generator():
     for i in range(1, 10):
         yield i
-# Create a generator
-gen = number_generator()
+```
 
-# Use a loop to get values from the generator
+#### Create a generator
+```python
+gen = number_generator()
+```
+
+#### Use a loop to get values from the generator
+```python
 for number in gen:
     print(number)
 ```
-
-#### using next()
+#### use next() to get values from the generator
 ```python
 gen = number_generator()
 print(next(gen))  
