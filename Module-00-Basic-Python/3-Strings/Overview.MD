@@ -15,6 +15,18 @@ print(len(text))  # Output: 13
 ```
 The length counts every character, including spaces and punctuation.
 
+#### `lower()` - Returns the string in lowercase
+```python
+text = "Hello, world!"
+print(text.lower())     # "Output: Hello, world!"
+```
+
+#### `upper()` - Returns the string in uppercase
+```python
+text = "Hello, world!"
+print(text.upper())     # "Output: HELLO, WORLD!"
+```
+
 #### `replace()` - Replaces a part of the string with another substring.
 ```python
 greeting = "Hello, world!"
