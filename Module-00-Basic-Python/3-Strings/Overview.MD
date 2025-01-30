@@ -114,10 +114,10 @@ def greet(name):
     """
     return f"Hello, {name}!"
 
-greet(Alice)
+greet('Aarya')
 ```
 #### Output:
-```Hello, Alice!```
+```Hello, Aarya!```
 
 #### Purpose: 
 Docstrings serve as documentation for your code, helping others understand what the function does, what inputs it takes, and what output it produces.
