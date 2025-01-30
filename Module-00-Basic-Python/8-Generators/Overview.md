@@ -26,7 +26,7 @@ gen = number_generator()
 for number in gen:
     print(number)
 ```
-#### use next() to get values from the generator
+#### Use next() to get values from the generator
 ```python
 gen = number_generator()
 print(next(gen))  
