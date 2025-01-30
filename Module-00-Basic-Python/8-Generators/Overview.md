@@ -1,8 +1,10 @@
 # Generators in Python
 ## 1. What is a Generator?
 A generator in Python is a function that yields values instead of returning them all at once. Unlike regular functions, which return a single value and terminate, a generator can pause execution and resume from where it left off.
+---
 ## 2. The yield Keyword
 The yield keyword is used to return values from a generator function without losing its state. Unlike return, yield remembers where the function left off and resumes execution from that point the next time it is called.
+---
 ## 3. Creating a Simple Generator Function
 Let's create a generator function that yields numbers from 1 to 5:
 
@@ -24,6 +26,7 @@ print(next(gen))  # Output: Yielded 1 \n 2
 print(next(gen))  # Output: Yielded 2 \n 3
 print(next(gen))  # Raises StopIteration
 ```
+---
 ## 4. Using a Generator in a Loop
 Generators are often used with for loops because they automatically handle StopIteration.
 
@@ -37,7 +40,7 @@ def count_down(n):
 for num in count_down(5):
     print(num)
 ```
-
+---
 ## 5. Difference Between yield and return
 | Feature         | `yield` (Generator)              | `return` (Regular Function)     |
 |---------------|---------------------------------|--------------------------------|
@@ -46,6 +49,7 @@ for num in count_down(5):
 | Execution     | Pauses execution and resumes | Function exits immediately |
 | Example Use Case | Large datasets, infinite sequences | Small calculations |
 
+---
 ## 6. Generator for Infinite Sequences
 Generators are ideal for generating infinite sequences, such as the Fibonacci series:
 
@@ -61,7 +65,7 @@ fib_gen = fibonacci()
 for _ in range(10):
     print(next(fib_gen))
 ```
-
+---
 ## 7. Converting a Generator to a List
 Although generators don’t store values, you can convert them into a list:
 
@@ -74,7 +78,7 @@ def squares(n):
 square_list = list(squares(5))
 print(square_list)  # Output: [0, 1, 4, 9, 16]
 ```
-
+---
 ## 8. Using yield from for Subgenerators
 Python provides yield from to delegate to another generator:
 
@@ -91,7 +95,7 @@ def main_generator():
 for num in main_generator():
     print(num)
 ```
-
+---
 ## 9. Real-World Use Cases of Generators
 - Reading large files line by line without loading the entire file into memory:
 ```python
@@ -105,7 +109,7 @@ for line in read_large_file("large_file.txt"):
 ```
 - Streaming data processing (e.g., reading API responses in chunks).
 - Generating an infinite stream of data.
-
+---
 ## 10. Conclusion
 - Generators use yield instead of return to return values one at a time.
 - They pause execution and resume from where they left off.
