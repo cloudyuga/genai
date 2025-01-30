@@ -1,6 +1,6 @@
 # Classes in Python
 
-## What is a Class?
+## 1. What is a Class?
 
 A class in Python is a template for creating objects. Objects are instances of a class, and each object has its own set of attributes (variables) and methods (functions defined in the class). Classes allow us to structure our code in a way that models real-world entities and their behaviors.
 
@@ -8,7 +8,7 @@ Think of a class as the blueprint for building a house. The class defines the de
 
 ---
 
-## Creating a Basic Class in Python
+## 2. Creating a Basic Class in Python
 
 Let’s begin by creating a simple class for a `Person`. Each `Person` object will have attributes such as `name`, `age`, and `gender`.
 
@@ -23,7 +23,7 @@ This code defines an empty class called `Person`. The `pass` statement is used h
 
 ---
 
-## Adding the `__init__` Method
+## 3. Adding the `__init__` Method
 
 The `__init__` method is a special method in Python that is automatically invoked every time a new object is created. It’s often referred to as the "initializer" or "constructor" of the class. This method sets up the initial state of the object by initializing its attributes.
 
@@ -46,7 +46,7 @@ class Person:
 
 ---
 
-## Using `self`
+## 4. Using `self`
 
 In Python classes, `self` refers to the instance of the class. It allows you to access and modify the attributes and methods of that instance.
 
@@ -54,7 +54,7 @@ When you create an object and call a method, Python automatically passes the obj
 
 ---
 
-## Adding a Method to Our Class
+## 5. Adding a Method to Our Class
 
 Let’s add a method to greet a person by name.
 
@@ -75,7 +75,7 @@ class Person:
 
 ---
 
-## Creating an Object (Instance) of the Class
+## 6. Creating an Object (Instance) of the Class
 
 Once the class is defined, we can create objects (instances) of that class. To do this, you call the class like a function, passing in any required arguments.
 
@@ -92,7 +92,7 @@ john = Person("John", 30, "Male")
 
 ---
 
-## Using the Object’s Methods and Attributes
+## 7. Using the Object’s Methods and Attributes
 
 Once we have an instance of the class, we can access its attributes and call its methods.
 
@@ -105,7 +105,7 @@ john.greet()      # Output: Hello, my name is John.
 
 ---
 
-## Example: `Book` Class
+## 8. Example: `Book` Class
 
 Let’s create a class for a `Book` to demonstrate more features, such as displaying book details, updating the year of publication, and calculating the book’s age.
 
@@ -156,7 +156,7 @@ print(f"The book is {book_age} years old.")  # Output: The book is 75 years old.
 - `book_age` calculates and returns the age of the book based on the current year.
 
 ---
-## Example: `car` Class
+## 9. Example: `car` Class
 ```python
 class Car:
     # Constructor to initialize the car's attributes
@@ -202,7 +202,7 @@ print(f"The car is {car_age} years old.")  # Output: The car is 10 years old.
 ```
 ---
 
-## Class Methods
+## 10. Class Methods
 
 You can also define class methods that operate on the class itself, rather than instances. These methods are defined using the `@classmethod` decorator.
 
@@ -219,7 +219,7 @@ MyClass.display_class_variable()  # Output: I am a class variable
 ```
 ---
 
-## Summary of the Steps
+## 11. Summary of the Steps
 - Define a class with the class keyword.
 - Add the __init__ method to set initial attributes when an object is created.
 - Use self in methods to access attributes and other methods of the instance.
