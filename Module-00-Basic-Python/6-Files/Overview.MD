@@ -31,7 +31,7 @@ with open('output.txt', 'w', encoding='utf-8') as file:
 
 #### Example: Reading a File
 ```python
-with open('example.txt', 'r', encoding='utf-8') as file:
+with open('output.txt', 'r', encoding='utf-8') as file:
     content = file.read()
     print(content)
 ```
