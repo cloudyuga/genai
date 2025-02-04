@@ -1,0 +1,74 @@
+Python
+Java
+C++
+JavaScript
+TypeScript
+Swift
+Kotlin
+Go
+Rust
+Ruby
+PHP
+C#
+SQL
+NoSQL
+PostgreSQL
+MongoDB
+MySQL
+Redis
+Elasticsearch
+Docker
+Kubernetes
+Terraform
+Ansible
+Jenkins
+Git
+GitHub
+GitLab
+CI/CD
+AWS
+Azure
+Google Cloud
+Linux
+Bash
+PowerShell
+Networking
+Cybersecurity
+DevOps
+MLOps
+Data Science
+Machine Learning
+Deep Learning
+NLP
+Computer Vision
+TensorFlow
+PyTorch
+Scikit-learn
+Pandas
+NumPy
+Matplotlib
+Big Data
+Hadoop
+Spark
+Kafka
+RabbitMQ
+Microservices
+REST API
+GraphQL
+Serverless
+Cloud Functions
+Edge Computing
+Blockchain
+Web3
+Smart Contracts
+Metaverse
+VR
+AR
+HTML 
+CSS 
+React
+Next.js
+Node.js 
+Express.js
+Django 
+Flask
