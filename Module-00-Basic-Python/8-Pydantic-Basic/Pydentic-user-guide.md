@@ -153,8 +153,8 @@ print(user.model_dump_json())```
 {'id': 5, 'name': 'Aditya Jain', 'is_active': True}
 {"id":5,"name":"Aditya Jain","is_active":true}
 ```
----
 
+---
 ## 🛎️ Conclusion
 Pydantic makes it easy to work with data by providing:
 - Automatic data validation
@@ -163,4 +163,3 @@ Pydantic makes it easy to work with data by providing:
 - Easy serialization and parsing
 
 Start using Pydantic in your Python projects for cleaner and safer code! 🚀
-
