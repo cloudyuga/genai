@@ -94,6 +94,7 @@ name='Unknown' price=0.0 in_stock=True
 Pydantic will automatically try to convert data to the correct type.
 
 ```python
+from pydantic import BaseModel
 class Order(BaseModel):
     order_id: int
     amount: float
@@ -113,6 +114,7 @@ order_id=123 amount=99.99
 You can define optional fields using `Optional`.
 
 ```python
+from pydantic import BaseModel
 from typing import Optional
 
 class Profile(BaseModel):
@@ -134,17 +136,23 @@ username='Aarya Naik' bio=None
 You can convert Pydantic objects to dictionaries or JSON.
 
 ```python
+from pydantic import BaseModel
+class User(BaseModel):
+    id: int
+    name: str
+    is_active: bool
+
+# Valid Data
+user = User(id=5, name='Aditya Jain', is_active=True)
 user_data = user.model_dump()
 print(user_data)
-print(user.model_dump_json())
-```
+print(user.model_dump_json())```
 
 ✅ **Output:**
 ```
-{'id': 1, 'name': 'Aarya Naik', 'is_active': True}
-{"id": 1, "name": "Aarya Naik", "is_active": true}
+{'id': 5, 'name': 'Aditya Jain', 'is_active': True}
+{"id":5,"name":"Aditya Jain","is_active":true}
 ```
-
 ---
 
 ## 🛎️ Conclusion
