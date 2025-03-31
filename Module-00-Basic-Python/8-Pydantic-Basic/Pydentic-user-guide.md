@@ -157,7 +157,7 @@ print(user.model_dump_json())
 
 ---
 ## 📤 Parsing API Response Data
-you can parse external data that are in JSON format.
+You can parse external data that are in JSON format.
 
 ```python
 from pydantic import BaseModel
