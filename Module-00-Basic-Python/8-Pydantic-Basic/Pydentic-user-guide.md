@@ -156,6 +156,42 @@ print(user.model_dump_json())
 ```
 
 ---
+## 📤 Parsing API Response Data
+you can parse external data that are in JSON format.
+
+```python
+from pydantic import BaseModel
+from typing import List
+
+# Define a Pydantic model for validation
+class User(BaseModel):
+    id: int
+    name: str
+    email: str
+    is_active: bool
+
+# Simulating an external API response (e.g., JSON data)
+api_response = {
+    "id": 101,
+    "name": "Aditya Jain",
+    "email": "aditya@example.com",
+    "is_active": True
+}
+
+# Parsing and validating the data using Pydantic
+user = User(**api_response)
+
+print(user)
+print(user.model_dump())  # Convert back to a dictionary
+```
+
+✅ **Output:**
+```
+id=101 name='Aditya Jain' email='aditya@example.com' is_active=True
+{'id': 101, 'name': 'Aditya Jain', 'email': 'aditya@example.com', 'is_active': True}
+```
+
+---
 
 ## 🛎️ Conclusion
 Pydantic makes it easy to work with data by providing:
