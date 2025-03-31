@@ -73,6 +73,7 @@ employee = Employee(name='Bob', age=-5, email='invalid-email')
 You can set default values for fields.
 
 ```python
+from pydantic import BaseModel
 class Product(BaseModel):
     name: str = 'Unknown'
     price: float = 0.0
