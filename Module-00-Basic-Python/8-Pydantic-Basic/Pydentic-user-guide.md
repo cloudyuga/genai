@@ -146,7 +146,8 @@ class User(BaseModel):
 user = User(id=5, name='Aditya Jain', is_active=True)
 user_data = user.model_dump()
 print(user_data)
-print(user.model_dump_json())```
+print(user.model_dump_json())
+```
 
 ✅ **Output:**
 ```
@@ -155,6 +156,7 @@ print(user.model_dump_json())```
 ```
 
 ---
+
 ## 🛎️ Conclusion
 Pydantic makes it easy to work with data by providing:
 - Automatic data validation
