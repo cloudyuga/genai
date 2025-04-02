@@ -1,5 +1,3 @@
-#pip install -qU duckduckgo-search langchain-community
-
 import gradio as gr
 from langchain_community.tools import DuckDuckGoSearchResults
 # Initialize DuckDuckGo search
