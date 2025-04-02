@@ -1,4 +1,4 @@
-#Example URL: https://cloudyuga.guru/blogs/beyond-boundaries-the-artistry-of-generative-ai/
+# Example URL: https://cloudyuga.guru/blogs/beyond-boundaries-the-artistry-of-generative-ai/
 import os
 import gradio as gr
 from langchain_openai import ChatOpenAI
