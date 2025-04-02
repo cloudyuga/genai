@@ -1,3 +1,5 @@
+# Generate tavily api key from <https://app.tavily.com/home>
+# Add TAVILY_API_KEY in .env
 import gradio as gr
 import os
 from dotenv import load_dotenv
