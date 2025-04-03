@@ -1,0 +1,6 @@
+gradio
+langchain-core
+langchain-openai
+python-dotenv
+langchain-huggingface
+numpy
