@@ -5,3 +5,5 @@ langchain-openai
 langchain-huggingface
 langchain-chroma
 numpy
+openai
+chromadb
