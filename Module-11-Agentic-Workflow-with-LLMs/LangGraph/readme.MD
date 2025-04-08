@@ -1,4 +1,4 @@
-#Add folowing API keys as a Secret in google colab
+# Add folowing API keys as a Secret in google colab
 
 openweather_api_key="<your_weather_api_key>"
 
