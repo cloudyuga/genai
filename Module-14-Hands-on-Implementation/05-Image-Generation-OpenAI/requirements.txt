@@ -1,4 +1,0 @@
-gradio
-openai
-python-dotenv
-pillow

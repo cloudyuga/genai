@@ -1,5 +1,0 @@
-os-sys
-streamlit
-PyMuPDF
-langchain-community
-Ollama
