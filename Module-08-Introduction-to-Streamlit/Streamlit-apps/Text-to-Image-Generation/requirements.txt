@@ -1,5 +1,0 @@
-torch
-transformers
-diffusers
-streamlit
-Pillow
