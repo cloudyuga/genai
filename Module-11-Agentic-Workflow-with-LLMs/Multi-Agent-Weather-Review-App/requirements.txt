@@ -1,4 +1,0 @@
-httpx
-streamlit 
-langchain
-langchain-huggingface

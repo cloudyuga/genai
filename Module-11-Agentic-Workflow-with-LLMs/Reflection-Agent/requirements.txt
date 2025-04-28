@@ -1,4 +1,0 @@
-python-dotenv
-langchain-huggingface
-langchain-core
-langgraph
