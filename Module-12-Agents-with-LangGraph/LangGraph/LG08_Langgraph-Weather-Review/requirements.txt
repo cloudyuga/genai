@@ -1,0 +1,7 @@
+httpx
+streamlit
+python-dotenv 
+langchain-huggingface
+langchain-core
+langgraph
+typing

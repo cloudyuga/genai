@@ -1,0 +1,5 @@
+httpx
+streamlit
+python-dotenv
+langchain
+langchain-huggingface
