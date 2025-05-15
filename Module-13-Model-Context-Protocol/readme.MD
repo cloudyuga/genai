@@ -22,21 +22,19 @@ pip install modelcontextprotocol
 # Create our server file
 new-item weather.py
 
-What’s happening under the hood
+What’s happening under the hood? When you ask a question:
 
-When you ask a question:
+- The client sends your question to Claude
 
-The client sends your question to Claude
+- Claude analyzes the available tools and decides which one(s) to use
 
-Claude analyzes the available tools and decides which one(s) to use
+- The client executes the chosen tool(s) through the MCP server
 
-The client executes the chosen tool(s) through the MCP server
+- The results are sent back to Claude
 
-The results are sent back to Claude
+- Claude formulates a natural language response
 
-Claude formulates a natural language response
-
-The response is displayed to you!
+- The response is displayed to you!
 
 # Install Claude Desktop
 visit https://claude.ai/download to download claude desktop in local machine.
