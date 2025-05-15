@@ -37,9 +37,11 @@ Claude formulates a natural language response
 The response is displayed to you!
 
 # Install Claude Desktop
+visit https://claude.ai/download to download claude desktop in local machine.
 
-From menu -> Open File -> Settings
+Open Claude Application 
 
+- Menu -> Open File -> Settings
 - Select Developer mode 
 - Edit Config
   It will move to claude_desktop_config.json (refer our codebase). Here we have to run our MCP server for claude.
@@ -50,4 +52,4 @@ From menu -> Open File -> Settings
 - You can verify the MCP server from
     - Main Menu -> File -> Settings -> Developer window 
     - You can see the list of Servers
-- claude desktop is now ready to answer real time weather, news or hrdataset questions.
+- Your claude desktop is now ready to answer real time weather, news or hrdataset questions.
