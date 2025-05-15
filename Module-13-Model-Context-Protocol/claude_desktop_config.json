@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+      "weather": {
+        "command": "C:\\Users\\hardi\\weather\\.venv\\Scripts\\python.exe",
+        "args": ["-u", "weather.py"],
+        "cwd": "C:\\Users\\hardi\\weather"
+      },
+      "news_weather": {
+        "command": "C:\\Users\\hardi\\weather\\.venv\\Scripts\\python.exe",
+        "args": ["-u", "news_weather.py"],
+        "cwd": "C:\\Users\\hardi\\weather"
+      },
+      "hr": {
+        "command": "C:\\Users\\hardi\\weather\\.venv\\Scripts\\python.exe",
+        "args": ["-u", "hr.py"],
+        "cwd": "C:\\Users\\hardi\\weather"
+      }
+    }
+  }
+  
