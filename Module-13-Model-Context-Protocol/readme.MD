@@ -36,4 +36,18 @@ The results are sent back to Claude
 Claude formulates a natural language response
 The response is displayed to you!
 
-## Install Claude Desktop
+# Install Claude Desktop
+
+From menu -> Open File -> Settings
+
+- Select Developer mode 
+- Edit Config
+  It will move to claude_desktop_config.json (refer our codebase). Here we have to run our MCP server for claude.
+- We should add our MCP Servers files (hr.py, weather.py, news_weather.py, hrdataset) from where our claude.exe is running
+    - for example: In local machine the path is "C:\Users\hardi\AppData\Local\AnthropicClaude\app-0.9.2"
+- Refresh/ Reload claude app
+- You can see the tools in claude chatbot. 
+- You can verify the MCP server from
+    - Main Menu -> File -> Settings -> Developer window 
+    - You can see the list of Servers
+- claude desktop is now ready to answer real time weather, news or hrdataset questions.
