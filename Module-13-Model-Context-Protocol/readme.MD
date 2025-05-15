@@ -17,23 +17,25 @@ uv venv
 
 # Install dependencies
 uv add mcp[cli] httpx
+pip install modelcontextprotocol
 
 # Create our server file
 new-item weather.py
 
-code $env:AppData\Claude\claude_desktop_config.json
-python weather.py
-
-pip install modelcontextprotocol
-
 What’s happening under the hood
+
 When you ask a question:
 
 The client sends your question to Claude
+
 Claude analyzes the available tools and decides which one(s) to use
+
 The client executes the chosen tool(s) through the MCP server
+
 The results are sent back to Claude
+
 Claude formulates a natural language response
+
 The response is displayed to you!
 
 # Install Claude Desktop
