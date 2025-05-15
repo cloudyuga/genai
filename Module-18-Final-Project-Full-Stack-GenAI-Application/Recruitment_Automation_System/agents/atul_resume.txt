@@ -1,0 +1,8 @@
+Atul Kumar
+Bachelor of Engineering (Computer Science)
+Computer Science graduate with strong foundation in software development, data structures, and algorithms. Passionate about problem-solving and learning new technologies.
+Python, Java, SQL, Git, HTML/CSS, Data Analysis, Teamwork
+Library Management System – Built using Java and MySQL
+Created personal portfolio using HTML, CSS, and JavaScript
+Software Intern at TechNova (6 months) – Supported bug fixing and testing for internal tools.
+BE – Computer Science, XYZ University, 2023
