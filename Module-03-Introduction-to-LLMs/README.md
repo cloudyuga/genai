@@ -12,6 +12,8 @@ On Windows use the following link:
 
 https://ollama.com/download/windows
 
+Download OllamaSetup.exe and Install Ollama
+
 For macOS use the following link
 
 https://ollama.com/download/mac
@@ -26,7 +28,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 ## ✅ Step 2: Start the Ollama Service
 
-After installation, run:
+After installation, run the following command from terminal:
 ```
 ollama serve
 ```
