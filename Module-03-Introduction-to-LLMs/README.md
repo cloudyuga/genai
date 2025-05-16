@@ -57,12 +57,12 @@ Start chatting with the AI right in your terminal!
 #  ✅ API call
 
 Example using curl:
-
+```
 curl -X POST http://localhost:11434/api/generate -d '{
   "model": "llama2",
   "prompt":"Why is the sky blue?"
  }'
-
+```
  Our ollama is running at http://localhost:11434
 
 # 🚀 Popular Models You Can Use
