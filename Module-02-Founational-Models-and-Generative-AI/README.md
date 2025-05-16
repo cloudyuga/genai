@@ -12,8 +12,24 @@ Visit the Playground at:
 You’ll need to log in using your OpenAI account. A free tier is available, and API credits may apply depending on usage.
 
 ---
+## 🌟 OPENAI Playground Features
 
-## 🚀 Key Features
+Explore what you can do with **GPT-4.1** in the [OpenAI Playground](https://platform.openai.com/playground/prompts?models=gpt-4.1)!
+
+---
+
+## 🧠 GPT-4.1
+
+- The most powerful AI model from OpenAI.
+- Understands long text (up to 1 million tokens).
+- Great for solving hard problems and talking like a human.
+
+---
+
+## ✍️ Prompts
+
+- Prompts are the questions or instructions you give to the AI.
+- You can test different ideas easily in the Playground.
 
 ### ✅ 1. Prompt Testing
 You can type in **custom prompts** to test how the model responds in different tones, styles, or formats.
@@ -37,6 +53,53 @@ You can define a "system" role to guide the model’s behavior (e.g., “You are
 ### ✅ 5. View and Copy Code
 You can copy the auto-generated code (Python, curl, Node.js, etc.) to use the same prompt programmatically via the OpenAI API.
 
+### 💡 Tips for Better Prompts
+
+- Be **explicit** with instructions: "Summarize this in one sentence..."
+- Use **examples**: "Translate this sentence to French: 'Good morning'"
+- Include **format hints**: "Return the answer as a bullet list"
+
+### 📜 Sample Prompt
+
+If you're just getting started, here’s a simple prompt you can try in the Playground:
+
+- Write a short story about a dog who wants to fly.
+- What are the benefits of drinking water?
+
+---
+
+## 🖼️ Images
+
+- You can upload images and ask questions about them.
+- Example: *“What’s happening in this picture?”*
+
+---
+
+## 🔊 Text-to-Speech (TTS)
+
+- Useful for voice assistants and reading out loud.
+
+---
+
+## 🤖 Assistant Features
+
+- The AI remembers your chat and can respond like a real assistant.
+- You can build tools where the AI answers live questions in real-time.
+
+---
+
+## ⚡ Real-Time (Audio + Chat)
+
+- Use the **Realtime API** to talk to AI using your voice.
+- Fast responses with low delay.
+
+---
+
+## 🧰 Function Calling
+
+- Tell the AI how to call your tools or functions.
+- Example: Ask the AI to book a meeting or check the weather.
+
 ---
 
 ## 🛠 Example Use Cases
@@ -55,17 +118,3 @@ You can copy the auto-generated code (Python, curl, Node.js, etc.) to use the sa
 - All prompts and responses may be logged for monitoring and improvement
 
 ---
-
-## 💡 Tips for Better Prompts
-
-- Be **explicit** with instructions: "Summarize this in one sentence..."
-- Use **examples**: "Translate this sentence to French: 'Good morning'"
-- Include **format hints**: "Return the answer as a bullet list"
-
----
-
-## 📜 Sample Prompt
-
-If you're just getting started, here’s a simple prompt you can try in the Playground:
-
-What are the benefits of drinking water?
