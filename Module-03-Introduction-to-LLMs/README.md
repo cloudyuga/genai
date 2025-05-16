@@ -8,17 +8,19 @@ Ollama is a tool that lets you run AI models like LLaMA on your computer – **n
 
 ### For Windows, macOS, or Linux:
 
-On Windows use the following link:
+##### On Windows use the following link:
 
 https://ollama.com/download/windows
 
-Download OllamaSetup.exe and Install Ollama
+Download OllamaSetup.exe and install Ollama
 
-For macOS use the following link
+##### For macOS use the following link
 
 https://ollama.com/download/mac
 
-For Linux machine,
+Download Ollama-darwin.zip file to install Ollama
+
+##### For Linux machine,
 
 Open your terminal and run:
 
@@ -62,3 +64,15 @@ curl -X POST http://localhost:11434/api/generate -d '{
  }'
 
  Our ollama is running at http://localhost:11434
+
+# 🚀 Popular Models You Can Use
+
+- llama4
+- llama3
+- mistral
+- gemma
+- codellama
+- phi
+- orca-mini
+  
+Check more at: https://ollama.com/library
