@@ -1,4 +1,0 @@
-streamlit
-llama-index-core
-langchain-openai
-python-dotenv

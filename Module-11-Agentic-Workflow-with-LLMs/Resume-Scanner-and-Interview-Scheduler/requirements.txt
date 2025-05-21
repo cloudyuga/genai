@@ -1,9 +1,0 @@
-numpy
-faiss-cpu
-gradio
-google-api-python-client
-google-auth-httplib2
-google-auth-oauthlib
-sentence-transformers
-transformers
-pytz
