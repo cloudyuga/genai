@@ -8,3 +8,7 @@ pydantic
 langchain-core
 pypdf2
 python-docx
+chromadb
+sentence-transformers
+langchain-huggingface
+langchain-chroma
