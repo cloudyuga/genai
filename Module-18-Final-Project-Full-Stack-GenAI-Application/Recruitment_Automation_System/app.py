@@ -1,11 +1,12 @@
+# Working
 import gradio as gr
-from agents.supervisor import process_job, process_interview, SupervisorState
+from agents.sup import process_job, process_interview, SupervisorState
 from utils import extract_text
 import os
 
 with gr.Blocks() as demo:
-    gr.Markdown("### 🧠 AI Powered Recruitment Automation System")
-    
+    gr.Markdown("### 🧠 Supervisor Agent — Resume Screening")
+
     api_key_input = gr.Textbox(label="🔑 Enter your API Key", type="password")
 
     with gr.Row():
@@ -29,14 +30,15 @@ with gr.Blocks() as demo:
         os.environ["OPENAI_API_KEY"] = api_key
         resume_text = extract_text(resume_file)
         state = process_job(requirements, resume_text)
+        #print("Match Percentage:", state["match_percent"])
         show_interview = state["match_percent"] >= 40
 
         return (
             state,
             state["jd_output"],
             state["match_result"],
-            gr.update(visible=show_interview),
-            gr.update(visible=show_interview),
+            gr.update(visible=show_interview), #interview_dropdown visibility
+            gr.update(visible=show_interview), #interview_btn visibility
             state["decision"]
         )
 
