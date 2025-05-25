@@ -39,6 +39,7 @@ Miniconda is a lighter version of Anaconda and is easier to install.
 ##### Go to the official site:
 👉 https://docs.conda.io/en/latest/miniconda.html
 
+###### Note: You should your email to download distribution
 - Download the installer for:
 
    - Windows 64-bit
