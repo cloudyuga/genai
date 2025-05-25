@@ -72,6 +72,7 @@ This creates a new environment called schoolenv with Python 3.10.
 
 You are now inside your new Python world.
 
+```(myenv) c:/user/project $```
 ### ✅ 5. Install packages
 
 ```pip install gradio```
