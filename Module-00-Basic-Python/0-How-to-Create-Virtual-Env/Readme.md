@@ -59,11 +59,11 @@ Miniconda is a lighter version of Anaconda and is easier to install.
 
 ### ✅ 3. Create a new environment
 
-```conda create --name my_env python=3.10```
+```conda create --name myenv python=3.10```
 
 OR
 
-```conda create -n my_env python=3.10 -y``` 
+```conda create -n myenv python=3.10 -y``` 
 
 This creates a new environment called schoolenv with Python 3.10.
 
