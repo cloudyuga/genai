@@ -53,11 +53,11 @@ Miniconda is a lighter version of Anaconda and is easier to install.
 
 ##### Finish installing.
 
-### ✅ 2. Open Command prompt
+### ✅ Step 2. Open Command prompt
 
 ```conda --version```
 
-### ✅ 3. Create a new environment
+### ✅ Step 3. Create a new environment
 
 ```conda create --name myenv python=3.10```
 
@@ -67,18 +67,21 @@ OR
 
 This creates a new environment called schoolenv with Python 3.10.
 
-### ✅ 4. Activate the environment
+### ✅ Step 4. Activate the environment
 
 ```conda activate myenv```
 
 You are now inside your new Python world.
 
 ```(myenv) c:/user/project $```
-### ✅ 5. Install packages
+
+### ✅ Step 5. Install packages
 
 ```pip install gradio```
 
-### ✅ 6. Deactivate the environment
+Your Enviroment is ready for development.
+
+### ✅ Step 6. Deactivate the environment
 
 ```conda deactivate```
 
