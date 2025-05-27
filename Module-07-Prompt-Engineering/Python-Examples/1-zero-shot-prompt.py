@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
  
-api_key = os.getenv('OPENAI_API_KEY')
-client = OpenAI(api_key=api_key)
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+client = OpenAI(api_key=OPENAI_API_KEY)
         
 prompt = "Write a poem about the ocean."
 response = client.chat.completions.create(
