@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/.chroma/index
+
+  app:
+    build: .
+    ports:
+      - "7860:7860"
+    depends_on:
+      - chroma
+    environment:
+      - CHROMA_HOST=chroma
+      - CHROMA_PORT=8000
+  
+volumes:
+  chroma_data:
