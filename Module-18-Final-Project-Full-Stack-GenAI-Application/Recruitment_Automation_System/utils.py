@@ -17,20 +17,6 @@ def get_llm() -> ChatOpenAI:
         raise ValueError("OPENAI_API_KEY environment variable is not set")
     return ChatOpenAI(model="gpt-4o-mini", openai_api_key=api_key)
 
-"""def extract_text(file_obj):
-    ext = file_obj.name.lower()
-    if ext.endswith(".pdf"):
-        reader = PdfReader(file_obj)
-        return "\n".join(page.extract_text() for page in reader.pages)
-    elif ext.endswith(".docx"):
-        doc = docx.Document(file_obj)
-        return "\n".join([p.text for p in doc.paragraphs])
-    elif ext.endswith(".txt"):
-        return file_obj.read().decode("utf-8")
-    else:
-        return "Unsupported file type"
-"""
-
 def extract_text(file_obj):
     if isinstance(file_obj, str):
         file_path = file_obj
@@ -62,4 +48,3 @@ def extract_text(file_obj):
 
     else:
         return "Unsupported file format."
-
