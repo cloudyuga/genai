@@ -2,7 +2,6 @@ gradio
 langchain
 langgraph
 langchain-openai
-openai
 python-dotenv
 pydantic
 langchain-core
