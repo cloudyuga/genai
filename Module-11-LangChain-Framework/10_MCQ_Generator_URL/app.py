@@ -2,49 +2,67 @@ import os
 import json
 import pandas as pd
 from dotenv import load_dotenv
+import gradio as gr
 from utils import get_table_data, read_data_from_url
-import streamlit as st
 from MCQGen import generate_evaluate_chain
 
-# loading JSON file
-with open('./response.json','r', encoding="utf-8") as file:
+# Load environment variables
+load_dotenv()
+
+# Loading JSON file
+with open('./response.json', 'r', encoding="utf-8") as file:
     RESPONSE_JSON = json.load(file)
 
-#create a title
-st.title("MCQ Creator Application with langchain")
-
-#create a form using st.form
-with st.form("user_inputs"):
-    url_add=st.text_input("URL", max_chars=100)
-    mcq_count=st.number_input("No. of MCQ", min_value=3, max_value=50)
-    tone=st.text_input("Complexity level of Questions", max_chars=20, placeholder="simple")
-    # Add button
-    button=st.form_submit_button("Create MCQs")
-
-    #check if the button is clicked and all fields have input
-    if button and url_add is not None and mcq_count and tone:
-        with st.spinner("loading..."):
-            text = read_data_from_url(url_add)
-            response=generate_evaluate_chain(
-                {
+def create_mcqs(url_add, mcq_count, tone):
+  # Set HF_TOKEN from input
+    if url_add and mcq_count and tone:
+        text = read_data_from_url(url_add)
+        response = generate_evaluate_chain(
+            {
                 "text": text,
                 "number": mcq_count,
                 "tone": tone,
                 "response_json": json.dumps(RESPONSE_JSON)
-                }
-            )
-            if isinstance(response,dict):
-              #extract quiz data from the response
-                quiz=response.get("quiz", None)
-                if quiz is not None:
-                    table_data=get_table_data(quiz)
-                    if table_data is not None:
-                        df=pd.DataFrame(table_data)
-                        df.index=df.index+1
-                        st.table(df)
-                        #Display the review in a textbox as well
-                        st.text_area(label="Review", value=response["review"])
-                    else:
-                        st.error("Error in the table data")
+            }
+        )
+        if isinstance(response, dict):
+            quiz = response.get("quiz", None)
+            if quiz:
+                try:
+                    quiz_json = json.loads(quiz)
+                    table_data = get_table_data(json.dumps(quiz_json))
+                except Exception as e:
+                    return f"Quiz parsing error: {e}", ""
+                #table_data = get_table_data(quiz)
+                if table_data is not None:
+                    df = pd.DataFrame(table_data)
+                    df.index = df.index + 1
+                    review = response.get("review", "")
+                    return df, review
+                else:
+                    return "Error in the table data", ""
             else:
-                st.write(response)
+                return "No quiz found in the response.", ""
+        else:
+            return "No response found", ""
+    else:
+        return "Please fill in all fields.", ""
+
+# Define the Gradio interface
+interface = gr.Interface(
+    fn=create_mcqs,
+    inputs=[
+        gr.Textbox(label="URL"),
+        gr.Number(label="No. of MCQ"),
+        gr.Textbox(label="Complexity level of Questions")
+    ],
+    outputs=[
+        gr.Dataframe(label="Generated MCQs"),
+        gr.Textbox(label="Review")
+    ],
+    title="MCQ Creator Application with LangChain"
+)
+
+# Launch the Gradio app
+if __name__ == "__main__":
+    interface.launch()
