@@ -10,8 +10,8 @@ api_key=os.getenv("OPENAI_API_KEY")
 model = init_chat_model("gpt-4o-mini", model_provider="openai")
 
 
-# Define the HR chatbot function
-def hr_chatbot(message, history=None):
+# Define the Finance chatbot function
+def finance_chatbot(message, history=None):
     # Prepare the system message to guide the behavior
     system_message = {
         "role": "system", 
@@ -30,6 +30,6 @@ def hr_chatbot(message, history=None):
 # Define the Gradio UI with the updated chatbot type
 with gr.Blocks() as demo:
     gr.Markdown("## Finance Assistant Chatbot")
-    chatbot = gr.ChatInterface(fn=hr_chatbot, title="Finance Assistant", type="messages")
+    chatbot = gr.ChatInterface(fn=finance_chatbot, title="Finance Assistant", type="messages")
 
 demo.launch()
