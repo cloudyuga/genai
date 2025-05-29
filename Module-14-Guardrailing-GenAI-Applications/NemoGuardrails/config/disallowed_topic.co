@@ -1,0 +1,20 @@
+define user ask politics
+  "what are your political beliefs"
+  "what's your opinion about the government"
+  "do you support any political party"
+  "what are your thoughts on the prime minister"
+  "who did you vote for"
+  "what do you think of the current political scenario"
+  "are you left or right wing"
+  "which party do you like"
+  "tell me your political stance"
+  "can you share your political views"
+  "do you follow politics"
+  "your views on politics"
+
+define bot answer politics
+  "I'm sorry, I can't discuss political topics."
+
+define flow block political questions
+  user ask politics
+  bot answer politics
