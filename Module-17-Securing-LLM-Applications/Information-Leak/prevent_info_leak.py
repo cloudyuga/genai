@@ -1,72 +1,66 @@
 # Your PDF contains sensitive info like Aadhar Number, The following app will not expose your sensitive data.
 import os
-import streamlit as st
+import gradio as gr
 from dotenv import load_dotenv
 from PyPDF2 import PdfReader
-from langchain_huggingface import HuggingFaceEndpoint
-from langchain.prompts import PromptTemplate
+from openai import OpenAI
 
-# Load environment variables
+# Load environment variable
 load_dotenv()
-HF_TOKEN = os.getenv("HF_TOKEN")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY)
 
-# Initialize the HuggingFace endpoint
-llm = HuggingFaceEndpoint(
-    repo_id="mistralai/Mistral-7B-Instruct-v0.3",
-    huggingfacehub_api_token=HF_TOKEN.strip(),
-    temperature=0.7,
-    max_new_tokens=200
-)
-
-# Function to read PDF and extract text
-def read_pdf(file_path):
-    reader = PdfReader(file_path)
+# Function to extract text from PDF
+def read_pdf(file_obj):
+    reader = PdfReader(file_obj)
     text = ""
     for page in reader.pages:
-        text += page.extract_text() + "\n"
-    return text
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + "\n"
+    return text.strip()
 
-# Function to generate answers from the text using LLM
-def generate_answer(question, context):
-    # System prompt to instruct the LLM
-    system_prompt = """
-    You are an AI assistant designed to answer questions based on the provided text. 
-    Your primary goal is to ensure that you do not expose sensitive data. 
-    If user ask sensitive information like Aadhar Number. Generate Apology message instead of information from the context.
+# Function to query OpenAI with context and question
+def generate_answer(pdf_file, question):
+    if pdf_file is None or question.strip() == "":
+        return "Please upload a PDF and enter a valid question."
 
-    Here is the context extracted from the document:
-    {context}
+    context = read_pdf(pdf_file)
 
-    Now, answer the following question based on the provided context:
+    system_prompt = (
+        "You are an AI assistant designed to answer questions based on the provided document context.\n"
+        "You must not expose any sensitive information such as Aadhar numbers, phone numbers, PAN, etc.\n"
+        "If the user asks for such information, respond with: "
+        "'Sorry, I cannot share sensitive personal information.'\n\n"
+        f"Document Context:\n{context}\n\n"
+        f"Question: {question}\nAnswer:"
+    )
 
-    Question: {question}
-    Answer:
-    """
-    
-    # Format the prompt
-    input_text = system_prompt.format(context=context, question=question)
-    return llm(input_text)
+    try:
+        response = client.responses.create(
+            model="gpt-4",  # or "gpt-4o" or "gpt-3.5-turbo"
+            input=[
+                {"role": "system", "content": "You are a helpful assistant that answers based on PDF content."},
+                {"role": "user", "content": system_prompt}
+            ]
+        )
+        return response.output_text
+    except Exception as e:
+        return f"Error: {str(e)}"
 
-# Streamlit UI
-st.title("PDF Question Answering System")
+# Gradio UI
+with gr.Blocks() as demo:
+    gr.Markdown("## 🔐 Safe PDF Question Answering (OpenAI GPT-4)")
+    gr.Markdown("Upload a PDF and ask a question. The assistant won't reveal sensitive information like Aadhar numbers.")
 
-uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+    with gr.Row():
+        pdf_input = gr.File(label="Upload PDF", file_types=[".pdf"])
+        question_input = gr.Textbox(label="Ask a question")
 
-if uploaded_file is not None:
-    with st.spinner("Processing..."):
-        # Read and process the PDF
-        pdf_text = read_pdf(uploaded_file)
-        
-        st.sidebar.subheader("PDF Data")
-        st.sidebar.write(pdf_text)
-        # Ask a question about the PDF
-        question = st.text_input("Ask a question about the PDF:")
-        
-        if st.button("Get Answer"):
-            if question:
-                # Generate answer using LLM with the system prompt
-                answer = generate_answer(question, pdf_text)
-                st.subheader("Answer")
-                st.write(answer)
-            else:
-                st.error("Please enter a question.")
+    answer_output = gr.Textbox(label="Answer", lines=6)
+
+    submit_btn = gr.Button("Get Answer")
+
+    submit_btn.click(fn=generate_answer, inputs=[pdf_input, question_input], outputs=answer_output)
+
+demo.launch()
