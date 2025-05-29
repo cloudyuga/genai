@@ -1,5 +1,4 @@
-streamlit
+gradio
 python-dotenv
 PyPDF2
-langchain-huggingface
-langchain
+openai
