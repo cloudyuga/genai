@@ -1,7 +1,8 @@
-openai
 langchain
-streamlit
-python-dotenv
+gradio
 beautifulsoup4
 pandas
 langchain_community
+torch
+langchain-openai
+python-dotenv
