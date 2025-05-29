@@ -1,0 +1,3 @@
+nemoguardrails 
+langchain-openai
+python-dotenv
