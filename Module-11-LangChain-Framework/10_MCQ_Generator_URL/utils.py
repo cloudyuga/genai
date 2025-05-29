@@ -1,7 +1,6 @@
 import json
 from langchain_community.document_loaders.recursive_url_loader import RecursiveUrlLoader
 from bs4 import BeautifulSoup as Soup
-from langchain_community.document_loaders import RecursiveUrlLoader
 
 def read_data_from_url(url):
     try:
@@ -10,6 +9,7 @@ def read_data_from_url(url):
         return text
     except Exception as e:
         return f"Error: {str(e)}"
+    
 
 def get_table_data(quiz_str):
         #convert quiz from string to dictinary
