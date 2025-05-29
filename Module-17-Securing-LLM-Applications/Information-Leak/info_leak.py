@@ -1,70 +1,69 @@
 # Your PDF contains Sensitive Info like Aadhar Number. The following app will display all the information.
 import os
-import streamlit as st
+import gradio as gr
 from dotenv import load_dotenv
 from PyPDF2 import PdfReader
-from langchain_huggingface import HuggingFaceEndpoint
-from langchain.prompts import PromptTemplate
+from openai import OpenAI
 
 # Load environment variables
 load_dotenv()
-HF_TOKEN = os.getenv("HF_TOKEN")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+print("key=", OPENAI_API_KEY)
+client=OpenAI(api_key=OPENAI_API_KEY)
 
-# Initialize the HuggingFace endpoint
-llm = HuggingFaceEndpoint(
-    repo_id="mistralai/Mistral-7B-Instruct-v0.3",
-    huggingfacehub_api_token=HF_TOKEN.strip(),
-    temperature=0.7,
-    max_new_tokens=200
-)
-
-# Function to read PDF and extract text
-def read_pdf(file_path):
-    reader = PdfReader(file_path)
+# Function to extract text from PDF
+def read_pdf(file_obj):
+    reader = PdfReader(file_obj)
     text = ""
     for page in reader.pages:
-        text += page.extract_text() + "\n"
-    return text
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + "\n"
+    return text.strip()
 
-# Function to generate answers from the text using LLM
-def generate_answer(question, context):
-    # System prompt to instruct the LLM
-    system_prompt = """
-    You are an AI assistant designed to answer questions based on the provided text. 
+# Function to query OpenAI with context and question
+def generate_answer(pdf_file, question):
+    if pdf_file is None or question.strip() == "":
+        return "Please upload a PDF and enter a valid question."
+
+    context = read_pdf(pdf_file)
+
+    system_prompt = (
+        "You are an AI assistant designed to answer questions based on the provided document context. "
+        "Only answer based on the text below.\n\n"
+        f"Document Context:\n{context}\n\n"
+        f"Question: {question}\nAnswer:"
+    )
+
+    try:
+        response = client.responses.create(
+            model="gpt-4",  # or "gpt-4o" or "gpt-3.5-turbo"
+            input=[
+                {"role": "system", "content": "You are a helpful assistant that answers based on PDF content."},
+                {"role": "user", "content": system_prompt}
+            ]
+        )
+        return response.output_text
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+# Gradio interface
+with gr.Blocks() as demo:
+    gr.Markdown("# 📄 PDF Question Answering (OpenAI GPT-4)")
+    gr.Markdown("Upload a PDF and ask a question about its content.")
     
-    Here is the context extracted from the document:
-    {context}
-
-    Now, answer the following question based on the provided context:
-
-    Question: {question}
-    Answer:
-    """
+    with gr.Row():
+        pdf_input = gr.File(label="Upload PDF", file_types=[".pdf"])
+        question_input = gr.Textbox(label="Enter your question")
     
-    # Format the prompt
-    input_text = system_prompt.format(context=context, question=question)
-    return llm(input_text)
+    answer_output = gr.Textbox(label="Answer", lines=5)
 
-# Streamlit UI
-st.title("PDF Question Answering System")
+    submit_btn = gr.Button("Get Answer")
 
-uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+    submit_btn.click(
+        fn=generate_answer,
+        inputs=[pdf_input, question_input],
+        outputs=answer_output
+    )
 
-if uploaded_file is not None:
-    with st.spinner("Processing..."):
-        # Read and process the PDF
-        pdf_text = read_pdf(uploaded_file)
-        
-        st.sidebar.subheader("PDF Data")
-        st.sidebar.write(pdf_text)
-        # Ask a question about the PDF
-        question = st.text_input("Ask a question about the PDF:")
-        
-        if st.button("Get Answer"):
-            if question:
-                # Generate answer using LLM with the system prompt
-                answer = generate_answer(question, pdf_text)
-                st.subheader("Answer")
-                st.write(answer)
-            else:
-                st.error("Please enter a question.")
+demo.launch()
