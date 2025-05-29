@@ -1,7 +1,7 @@
 from collections import Counter
 from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, url_for
-from langchain_huggingface import HuggingFaceEndpoint
+from langchain_openai import ChatOpenAI
 import logging
 import os
 
@@ -13,14 +13,13 @@ logging.basicConfig(filename='hitl_reviews.log', level=logging.INFO)
 
 # Load environment variables
 load_dotenv()
-HF_TOKEN = os.getenv("HF_TOKEN")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Initialize the HuggingFaceEndpoint
-llm = HuggingFaceEndpoint(
-    repo_id="mistralai/Mistral-7B-Instruct-v0.3",
-    huggingfacehub_api_token=HF_TOKEN.strip(),
+# Initialize ChatOpenAI
+llm = ChatOpenAI(
     temperature=0.7,
-    max_new_tokens=20  # Adjusted to 200 as per the previous context
+    max_tokens=200,
+    openai_api_key=OPENAI_API_KEY
 )
 
 # File to store feedback counts
@@ -46,10 +45,11 @@ def update_feedback_counts(feedback_type):
         with open(FEEDBACK_COUNT_FILE, 'w') as file:
             file.write(f"{counts['approved']},{counts['rejected']}")
 
-# Function to generate text using Hugging Face model
+# Function to generate text using OpenAI model
+
 def generate_text(prompt):
-    result = llm(prompt)
-    return result['generated_text'] if 'generated_text' in result else result
+    response = llm.invoke(prompt)
+    return response.content if hasattr(response, "content") else str(response)
 
 # Initialize feedback counter
 feedback_counter = Counter(initialize_feedback_counts())
