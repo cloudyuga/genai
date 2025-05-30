@@ -9,6 +9,7 @@ import os
 app = Flask(__name__)
 
 # Setup logging
+logging.basicConfig(level=logging.INFO)
 logging.basicConfig(filename='hitl_reviews.log', level=logging.INFO)
 
 # Load environment variables
