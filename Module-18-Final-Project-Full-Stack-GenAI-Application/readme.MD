@@ -57,7 +57,7 @@ You can also run using Docker:
 docker-compose up
 ```
 
-### **🧪 How it Works?**
+## 🧪 How it Works?
 - User provides a job requirement and uploads a resume.
 
 - App checks ChromaDB for a similar JD using metadata → semantic search → fallback to generation.
@@ -66,12 +66,17 @@ docker-compose up
 
 - If match percent ≥ threshold, simulate interview → onboarding.
 
-### 📝 Example
-Input:	
+## 📝 Example
+Input:
+
 Requirement: Doctor	
+
 Resume: atul-resume.txt	
+
 Output:
+
 JD Generated or Retrieved
+
 Match %: 90%, Decision: Selected OR 5% Decision: Rejected
 
 
