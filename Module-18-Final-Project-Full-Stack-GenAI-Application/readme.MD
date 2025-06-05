@@ -73,7 +73,7 @@ python app.py
 ```
 Step 5: Open URL http://localhost:7860 for Gradio UI
 
-**3. Run this application using Docker:
+**3. Run this application using Docker:**
 
 Step 1: Remove persist_db_utils.py
 
