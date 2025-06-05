@@ -59,7 +59,7 @@ cd mastering-genai-w-python/Module-18-Final-Project-Full-Stack-GenAI-Application
 
 ## Run the Application
 
-###**Run the app locally with persist directory** 
+### **Run the app locally with persist directory** 
 
 Step 1: Install dependencies
 ```
@@ -77,7 +77,7 @@ Step 5: Open URL http://localhost:7860 for Gradio UI
 
                                     **OR**
 
-###**Run this application using Docker:**
+### **Run this application using Docker:**
 
 Step 1: Remove persist_db_utils.py
 
