@@ -46,9 +46,6 @@ Full_Stack_App/
 │ └──────── on_board_process.py # Onboarding agent
 
 ---
-<pre><code>```text Full_Stack_App/ │ ├── app.py # Main Gradio app entry point ├── db_utils.py # Chroma DB connection and utility methods ├── docker-compose.yaml # Compose file to run app with ChromaDB ├── Dockerfile # Dockerfile for the app ├── requirements.txt # Required Python packages ├── utils.py # Helper functions │ ├── agents/ │ ├── jd_gen.py # JD Generator agent │ ├── rs.py # Resume match agent │ ├── sup.py # Supervisor agent orchestrating the flow │ └── on_board_process.py # Onboarding agent ``` </code></pre>
-
-
 
 ## ⚙️ Installation
 
