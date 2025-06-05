@@ -50,14 +50,16 @@ Full_Stack_App/
 
 ## ⚙️ Installation
 
-**1. Clone the repository**
+**Clone the repository**
 
 ```bash
 git clone https://github.com/cloudyuga/mastering-genai-w-python.git
 cd mastering-genai-w-python/Module-18-Final-Project-Full-Stack-GenAI-Application/Recruitment_Automation_System
 ```
 
-**2. Run the app locally with persist directory** 
+## Run the Application
+
+###**Run the app locally with persist directory** 
 
 Step 1: Install dependencies
 ```
@@ -73,7 +75,9 @@ python app.py
 ```
 Step 5: Open URL http://localhost:7860 for Gradio UI
 
-**3. Run this application using Docker:**
+                                    **OR**
+
+###**Run this application using Docker:**
 
 Step 1: Remove persist_db_utils.py
 
