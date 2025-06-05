@@ -20,13 +20,13 @@ This is a full-stack AI application that evaluates candidate resumes against job
 
 Full_Stack_App/
 │
-
+│
 ├── app.py # Main Gradio app entry point
-
+│
 ├── db_utils.py # Chroma DB connection and utility methods
-
+│
 ├── docker-compose.yaml # Compose file to run app with ChromaDB
-
+│
 ├── Dockerfile # Dockerfile for the app
 
 ├── requirements.txt # Required Python packages
