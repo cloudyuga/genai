@@ -12,10 +12,10 @@ def get_llm() -> ChatOpenAI:
     Raises:
         ValueError: if the OPENAI_API_KEY is not set.
     """
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    if not OPENAI_API_KEY:
         raise ValueError("OPENAI_API_KEY environment variable is not set")
-    return ChatOpenAI(model="gpt-4o-mini", openai_api_key=api_key)
+    return ChatOpenAI(model="gpt-4o-mini", openai_api_key=OPENAI_API_KEY)
 
 def extract_text(file_obj):
     if isinstance(file_obj, str):
