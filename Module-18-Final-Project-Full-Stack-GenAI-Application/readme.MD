@@ -74,6 +74,7 @@ Step 4: To run the application locally with a persistent directory for ChromaDB,
 python app.py
 ```
 Step 5: Open URL http://localhost:7860 for Gradio UI
+
 ---
 
 OR
