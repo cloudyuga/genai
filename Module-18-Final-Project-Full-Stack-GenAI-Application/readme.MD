@@ -31,7 +31,7 @@ Full_Stack_App/
 
 ├── requirements.txt # Required Python packages
 
-├── utils.py # Helper functions
+├── utils.py # Helper functions (We have use gpt-4o-mini, you can change the model to gpt-4.1)
 
 │
 
@@ -46,6 +46,7 @@ Full_Stack_App/
 │ └──────── on_board_process.py # Onboarding agent
 
 ---
+##### Note: You can remove Sample Resumes and Output folder from your actual folder structure. They are just for reference. 
 
 ## ⚙️ Installation
 
@@ -55,25 +56,35 @@ Full_Stack_App/
 git clone https://github.com/cloudyuga/mastering-genai-w-python.git
 cd mastering-genai-w-python/Module-18-Final-Project-Full-Stack-GenAI-Application/Recruitment_Automation_System
 ```
-**2. Install dependencies**
+
+**2. Run the app locally with persist directory** 
+
+Step 1: Install dependencies
 ```
 pip install -r requirements.txt
 ```
-**3. Run the app** 
+Step 2: Remove the existing db_utils.py file.
 
-Remove db_utils.py and rename persist_db_utils.py ---> db_utils.py and run the following command on local machine,
+Step 3: Rename persist_db_utils.py to db_utils.py.
+
+Step 4: To run the application locally with a persistent directory for ChromaDB, use the following command:
 ```
 python app.py
 ```
-You can also run this application using Docker:
+Step 5: Open URL http://localhost:7860 for Gradio UI
 
-Remove persist_db_utils.py & run the following command,
+**3. Run this application using Docker:
+
+Step 1: Remove persist_db_utils.py
+
+Step 2: Run the following command,
 ```
 docker-compose up
 ```
+step 3: Open URL http://localhost:7860 for Gradio UI
 
 ## 🧪 How it Works?
-- User provides a job requirement and uploads a resume.
+- User provides OpeanAI API key, a job requirement and uploads a resume.
 
 - App checks ChromaDB for a similar JD using metadata → semantic search → fallback to generation.
 
@@ -84,13 +95,15 @@ docker-compose up
 ## 📝 Example
 Input:
 
+API key: ******
+
 Requirement: Doctor	
 
 Resume: atul-resume.txt	
 
 Output:
 
-JD Generated or Retrieved
+JD Status, JD Generated or Retrieved
 
 Match %: 90%, Decision: Selected OR 5% Decision: Rejected
 
