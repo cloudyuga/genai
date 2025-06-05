@@ -1,5 +1,5 @@
 
-# 🧠 Full Stack AI-Powered Resume Screening App
+# 🧠 Full Stack AI-Powered Recruitment System
 
 This is a full-stack AI application that evaluates candidate resumes against job requirements using LLMs and stores/generates job descriptions (JDs) with semantic search using **ChromaDB**. It integrates **LangChain agents** to simulate a full interview and onboarding process.
 
@@ -35,15 +35,15 @@ Full_Stack_App/
 
 │
 
-├── agents/
+├─────agents/
 
-│ ├── jd_gen.py # JD Generator agent
+│ ├──────── jd_gen.py # JD Generator agent
 
-│ ├── rs.py # Resume match agent
+│ ├──────── rs.py # Resume match agent
 
-│ ├── sup.py # Supervisor agent orchestrating the flow
+│ ├──────── sup.py # Supervisor agent orchestrating the flow
 
-│ └── on_board_process.py # Onboarding agent
+│ └──────── on_board_process.py # Onboarding agent
 
 ---
 
