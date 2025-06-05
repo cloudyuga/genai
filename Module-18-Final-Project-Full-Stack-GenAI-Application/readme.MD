@@ -77,7 +77,7 @@ Step 5: Open URL http://localhost:7860 for Gradio UI
 
 ---
 
-OR
+                                                    OR
 
 ---
 ### **Run this application using Docker:**
