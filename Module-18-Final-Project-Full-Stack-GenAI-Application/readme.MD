@@ -59,11 +59,15 @@ cd mastering-genai-w-python/Module-18-Final-Project-Full-Stack-GenAI-Application
 ```
 pip install -r requirements.txt
 ```
-**3. Run the app**
+**3. Run the app** 
+
+Remove db_utils.py and rename persist_db_utils.py ---> db_utils.py and run the following command on local machine,
 ```
 python app.py
 ```
-You can also run using Docker:
+You can also run this application using Docker:
+
+Remove persist_db_utils.py & run the following command,
 ```
 docker-compose up
 ```
