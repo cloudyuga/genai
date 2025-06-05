@@ -61,19 +61,19 @@ cd mastering-genai-w-python/Module-18-Final-Project-Full-Stack-GenAI-Application
 
 ### **Run the app locally with persist directory** 
 
-Step 1: Install dependencies
+**Step 1:** Install dependencies
 ```
 pip install -r requirements.txt
 ```
-Step 2: Remove the existing db_utils.py file.
+**Step 2:** Remove the existing db_utils.py file.
 
-Step 3: Rename persist_db_utils.py to db_utils.py.
+**Step 3:** Rename persist_db_utils.py to db_utils.py.
 
-Step 4: To run the application locally with a persistent directory for ChromaDB, use the following command:
+**Step 4:** To run the application locally with a persistent directory for ChromaDB, use the following command:
 ```
 python app.py
 ```
-Step 5: Open URL http://localhost:7860 for Gradio UI
+**Step 5:** Open URL http://localhost:7860 for Gradio UI
 
 ---
 
@@ -82,13 +82,13 @@ Step 5: Open URL http://localhost:7860 for Gradio UI
 ---
 ### **Run this application using Docker:**
 
-Step 1: Remove persist_db_utils.py
+**Step 1:** Remove persist_db_utils.py
 
-Step 2: Run the following command,
+**Step 2:** Run the following command,
 ```
 docker-compose up
 ```
-step 3: Open URL http://localhost:7860 for Gradio UI
+**Step 3:** Open URL http://localhost:7860 for Gradio UI
 
 ## 🧪 How it Works?
 - User provides OpeanAI API key, a job requirement and uploads a resume.
