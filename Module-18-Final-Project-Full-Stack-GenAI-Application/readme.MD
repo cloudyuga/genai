@@ -50,7 +50,7 @@ Full_Stack_App/
 
 ## ⚙️ Installation
 
-**Clone the repository**
+### **Clone the repository**
 
 ```bash
 git clone https://github.com/cloudyuga/mastering-genai-w-python.git
@@ -77,7 +77,7 @@ Step 5: Open URL http://localhost:7860 for Gradio UI
 
 ---
 
-                                                    OR
+## **OR**
 
 ---
 ### **Run this application using Docker:**
