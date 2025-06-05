@@ -17,6 +17,7 @@ with gr.Blocks() as demo:
 
     state_json = gr.State()
 
+    output_log = gr.Textbox(label="JD Generation Status", lines=3)
     jd_out = gr.Textbox(label="Generated JD")
     match_result = gr.Textbox(label="Resume Match Result")
     interview_dropdown = gr.Radio(choices=["Selected", "Rejected"], label="Interview Result")
@@ -29,7 +30,7 @@ with gr.Blocks() as demo:
     def on_submit(api_key, requirements, resume_file):
         os.environ["OPENAI_API_KEY"] = api_key
         resume_text = extract_text(resume_file)
-        state = process_job(requirements, resume_text)
+        state, logs = process_job(requirements, resume_text)
         #print("Match Percentage:", state["match_percent"])
         show_interview = state["match_percent"] >= 40
 
@@ -39,7 +40,8 @@ with gr.Blocks() as demo:
             state["match_result"],
             gr.update(visible=show_interview), #interview_dropdown visibility
             gr.update(visible=show_interview), #interview_btn visibility
-            state["decision"]
+            state["decision"],
+            logs
         )
 
     def on_interview(state, decision):
@@ -49,7 +51,7 @@ with gr.Blocks() as demo:
     submit_btn.click(
     fn=on_submit,
     inputs=[api_key_input, requirements, resume_upload],
-    outputs=[state_json, jd_out, match_result, interview_dropdown, interview_btn, final_output]
+    outputs=[state_json, jd_out, match_result, interview_dropdown, interview_btn, final_output,output_log]
     )
 
     interview_btn.click(
@@ -58,4 +60,4 @@ with gr.Blocks() as demo:
         outputs=[state_json, final_output]
     )
 
-demo.launch(server_name="0.0.0.0", server_port=7860)
+demo.launch()
