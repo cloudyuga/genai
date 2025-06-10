@@ -4,10 +4,13 @@
 
 - Install fastmcp if it is not there in your venv and run the following command,
 
-`fastmcp run mcp_weather_news.py:mcp --transport sse` 
-
+```
+fastmcp run mcp_weather_news.py:mcp --transport sse
+```
 ### Another Terminal(split):
 
- activate your venv and run,
+- Activate your venv and run,
 
-`python gradio_client.py`
+```
+python gradio_client.py
+```
