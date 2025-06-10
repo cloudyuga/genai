@@ -16,7 +16,7 @@ Learn how to import built-in, external, and custom packages in Python.
 Basics of function definition, parameters, return values, default and keyword arguments.
 
 ### 📁 3. Strings
-String manipulation, slicing, common methods, and escape sequences.
+String manipulation, slicing, common methods, and doc-string.
 
 ### 📁 4. Formatted String Literals
 Learn f-strings, format specifiers, and embedding expressions inside strings.
