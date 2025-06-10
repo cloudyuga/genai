@@ -1,5 +1,5 @@
 ## SSE RUN:
-### open a terminal
+### Open a terminal
 - We can use venv
 
 - Install fastmcp if it is not there in your venv and run the following command,
