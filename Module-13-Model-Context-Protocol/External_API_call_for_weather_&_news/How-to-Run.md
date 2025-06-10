@@ -1,14 +1,13 @@
 ## SSE RUN:
 ### open a terminal
+- We can use venv
 
-`cd weather -> .venv\Scripts\Activate`
-
-Install fastmcp if it is not there in your venv
+- Install fastmcp if it is not there in your venv and run the following command,
 
 `fastmcp run mcp_weather_news.py:mcp --transport sse` 
 
 ### Another Terminal(split):
 
-`.venv\Scripts\Activate`
+ activate your venv and run,
 
 `python gradio_client.py`
