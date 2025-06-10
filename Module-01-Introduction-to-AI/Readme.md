@@ -33,24 +33,26 @@ Dataset: train.csv
 
 Techniques Used:
 
-Simple Linear Regression
+- Simple Linear Regression
 
-Data visualization with Matplotlib
+- Data visualization with Matplotlib
 
-Evaluation using Mean Squared Error
+- Evaluation using Mean Squared Error
 
 3. 🏘 House Price Prediction – Multiple Variables
+
 Notebook: House_Price_Prediction_Multiple_Variable_LR.ipynb
 
 Goal: Predict house prices using multiple features (e.g., size, number of bedrooms, location, etc.)
 
 Techniques Used:
 
-Multivariable Linear Regression
+- Multivariable Linear Regression
 
-Data preprocessing with Pandas
+- Data preprocessing with Pandas
 
-Model training and performance evaluation  
+- Model training and performance evaluation
+  
 ### 📁 Dataset
 train.csv contains the data used for house price prediction notebooks. Ensure the file is in the same directory as the notebooks for seamless execution.
 
