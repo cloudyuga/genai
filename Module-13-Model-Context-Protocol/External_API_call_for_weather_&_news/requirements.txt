@@ -1,1 +1,6 @@
-
+fastapi
+httpx
+python-dotenv
+fastmcp
+openai
+gradio
