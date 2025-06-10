@@ -38,5 +38,3 @@ How to serialize and deserialize Python objects using the pickle module.
 
 ### 📁 10. Pydantic Basics
 Intro to data validation and settings management using the pydantic library.
-
-
