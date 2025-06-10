@@ -38,3 +38,6 @@ How to serialize and deserialize Python objects using the pickle module.
 
 ### 📁 10. Pydantic Basics
 Intro to data validation and settings management using the pydantic library.
+
+## 📓 Jupyter Notebooks Included
+Each chapter in this module contains a .ipynb (Jupyter Notebook) file that explains the topic with hands-on examples and exercises. These notebooks are designed to help you learn by doing.
