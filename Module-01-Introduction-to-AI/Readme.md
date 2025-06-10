@@ -23,7 +23,7 @@ Libraries:
 - NumPy
 - Matplotlib
 
-## 2. 🏠 House Price Prediction – Single Variable
+### 2. 🏠 House Price Prediction – Single Variable
 
 Notebook: House_Price_Prediction_LR.ipynb
 
@@ -39,7 +39,7 @@ Techniques Used:
 
 - Evaluation using Mean Squared Error
 
-3. 🏘 House Price Prediction – Multiple Variables
+### 3. 🏘 House Price Prediction – Multiple Variables
 
 Notebook: House_Price_Prediction_Multiple_Variable_LR.ipynb
 
