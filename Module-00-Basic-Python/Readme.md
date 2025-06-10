@@ -22,7 +22,7 @@ String manipulation, slicing, common methods, and doc-string.
 Learn f-strings, format specifiers, and embedding expressions inside strings.
 
 ### 📁 5. Lists, Dictionaries, Sets
-Collections explained with examples: indexing, looping, comprehension, mutability.
+Collections explained with examples of lists, dictionaries and sets.
 
 ### 📁 6. Files
 Read/write to files, context managers (with statement), and file handling best practices.
