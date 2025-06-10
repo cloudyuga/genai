@@ -8,8 +8,8 @@ import gradio as gr
 
 # Load OpenAI API key
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
-openai_client = OpenAI(api_key=api_key)
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Global tool list cache
 tool_list = []
