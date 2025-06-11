@@ -1,4 +1,14 @@
-# Applications & Labs
+# 🧪 Gradio UI Module — Interactive App Development with Python
+This module is dedicated to building modern, interactive UIs using Gradio — a lightweight Python library that lets you create shareable web apps for machine learning models, data apps, and more — all in just a few lines of code.
+
+## 🚀 What You'll Learn
+- Simple Apps without LLM like BMI calculator, upload CSV files
+- Apps with LLM like summary generation, Invoice extractor, text to image generation, MCQ generator etc.
+- The three types of Gradio apps: Interface, Blocks, and ChatInterface
+- How to connect Python functions with clean UI components
+- Use LLMs (like OpenAI GPT) to build dynamic apps
+- Build real-world tools like birthday messengers, HR assistants, and job description generators
+
 ## 🔍 Gradio Application Descriptions
 ### 1️⃣ BMI Calculator
 📂 Apps/1-BMI-calculator
