@@ -87,10 +87,10 @@ Tech stack:
 ### ✅ Lab-0: Prompt Execution
 📄 Lab-0-Prompt_Execution.ipynb
 
-Demo 1:
+- Demo 1:
 Directly call the model using Python code to understand how prompts and responses work with OpenAI's Chat API.
 
-Demo 2:
+- Demo 2:
 Use Gradio to create a user-friendly interface that allows anyone to enter prompts without writing code.
 
 👉 Behind the scenes, the prompt is still sent along with a system message to shape the assistant's behavior.
