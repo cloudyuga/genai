@@ -1,4 +1,4 @@
-# Applicatiins & Labs
+# Applications & Labs
 ## 🔍 Gradio Application Descriptions
 ### 1️⃣ BMI Calculator
 📂 Apps/1-BMI-calculator
