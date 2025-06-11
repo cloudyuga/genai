@@ -33,3 +33,4 @@ This module demonstrates advanced prompting techniques using **function calling*
    git clone https://github.com/cloudyuga/mastering-genai-w-python.git
    cd mastering-genai-w-python/Module-08-Structured-Outputs/
   ```
+- Run the notebooks with Jupyter
