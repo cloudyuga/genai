@@ -6,7 +6,7 @@ This module showcases how to build AI-powered applications using text, images, a
 
 | Lab | Name                                                                                          | Modality                 | Description                                                                                          |
 |-----|-----------------------------------------------------------------------------------------------|---------------------|------------------------------------------------------------------------------------------------------|
-| 0   | `Lab-0_Text_to_Image_Gen.ipynb`                                                               | 🖼️ Text &nbsp;→&nbsp; Image      | Generate images from text prompts using OpenAI APIs (DALL·E model)                                   |
+| 0   | `Lab-0_Text_to_Image_Gen.ipynb`                                                               | 🖼️ Text→Image      | Generate images from text prompts using OpenAI APIs (DALL·E model)                                   |
 | 1   | `Lab-1-Gradio_Birthday_Card_Generation.ipynb`                                                 | 📝 Text              | Build a birthday card generator using information from dataset                                       |
 | 2   | `Lab-2-Text-to-Video.ipynb`                                                                   | 🎥 Text → Video      | Convert story-like prompts into short videos using AI models                                         |
 | 3   | `Lab-3-Image_Understanding.ipynb`                                                             | 🖼️→🧠 Image → Text    | Use GPT-4 models to understand the uploaded image, ask related questions, and generate LLM response  |
