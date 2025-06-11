@@ -38,15 +38,15 @@ Tech stack:
 ### 4️⃣ Invoice Extractor
 📂 Apps/4-Invoice-Extractor
 
-- Upload an invoice PDF and extract key fields like date, invoice number, and total.
+- Upload an invoice image and extract key fields like date, invoice number, total etc.
 
 Use case: 
 - Automate invoice parsing.
 
 Tech stack: 
-- PyMuPDF
-- Pandas
-- Regex
+- gradio
+- PIL
+- Google gemini API
 
 ### 5️⃣ Gradio Client Example
 📂 Apps/5-gradio-client-example
