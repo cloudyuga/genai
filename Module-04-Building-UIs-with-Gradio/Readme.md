@@ -1,5 +1,5 @@
 # Applicatiins & Labs
-## 🔍 Application Descriptions
+## 🔍 Gradio Application Descriptions
 ### 1️⃣ BMI Calculator
 📂 Apps/1-BMI-calculator
 
@@ -84,9 +84,7 @@ Tech stack:
 - Panda (dataframe)
 
 ## 🧪 Gradio Labs Collection
-
 ### ✅ Lab-0: Prompt Execution
-
 📄 Lab-0-Prompt_Execution.ipynb
 
 Demo 1:
@@ -100,33 +98,32 @@ Use Gradio to create a user-friendly interface that allows anyone to enter promp
 Goal: Understand how to send input to an LLM and display the response interactively with Gradio.
 
 ### 🏗️ Lab-1: Types of Gradio App
-
 📄 Lab-1-Types_of_Gradio_App.ipynb
 
 Description: Learn about different Gradio app interfaces: Interface, Blocks, and ChatInterface.
 
 Goal: Understand Gradio's app structure and choose the right interface for your use case.
 
-🎂 Lab-2: Birthday Message Apps
+### 🎂 Lab-2: Birthday Message Apps
 📄 Lab-2-Birthday_Message_Apps.ipynb
 
 Description: Create fun birthday greeting generators with Gradio.
 
 Goal: Generate personalized birthday messages using text input and model outputs.
 
-🧑‍💼 Lab-3: HR Assistant
+### 🧑‍💼 Lab-3: HR Assistant
 📄 Lab-3-HR_Assistant.ipynb
 
 Description: Build an AI-powered assistant to answer HR-related queries.
 
 Goal: Demonstrate use of prompt engineering, chat interaction, and data handling.
 
-📄 Lab-4: Job Description Generator
+### 📄 Lab-4: Job Description Generator Apps
 📄 Lab-4-Job_Description_App.ipynb
 
-Description: Automatically generate job descriptions based on input roles and responsibilities.
+Description: Automatically generate job descriptions based on input roles and responsibilities. We have created Job Description in different ways.
+- Demo 1: Without any context : input ---> job title and role details 
+- Demo 2: Using company URL : input ---> company URL
+- Demo 3: Using reference URL : input ---> Your company name, Reference job description URL of any company
 
 Goal: Explore practical use of LLMs in automating HR and recruitment tasks.
-
-
-
