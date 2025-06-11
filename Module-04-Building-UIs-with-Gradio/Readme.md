@@ -23,7 +23,7 @@ Tech stack:
 ### 3️⃣ Content Summary App
 📂 Apps/3-Content-Summary-App
 
-- Summarizes large chunks of text using an OpenAI-powered model.
+- Summarizes text using an OpenAI-powered model.
 
 Use case: 
 - Condense articles
@@ -33,7 +33,7 @@ Use case:
 Tech stack: 
 - Gradio
 - OpenAI API
-- Transformers
+  
 
 ### 4️⃣ Invoice Extractor
 📂 Apps/4-Invoice-Extractor
