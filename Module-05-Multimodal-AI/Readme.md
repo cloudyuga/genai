@@ -2,7 +2,7 @@
 This module showcases how to build AI-powered applications using text, images, audio, and video through Gradio, OpenAI, and multimodal embeddings. The goal is to enable learners to work with various input/output types and build end-to-end AI applications with creative user interfaces.
 ## 🧪 Included Labs Overview
 
-| Lab | Name                                                          | Modality           | Description                                                                 |
+| Lab | Name                                                          | Modality               | Description                                                                 |
 |-----|---------------------------------------------------------------|--------------------|-----------------------------------------------------------------------------|
 | 0   | `Lab-0_Text_to_Image_Gen.ipynb`                              | 🖼️ Text → Image     | Generate images from text prompts using OpenAI APIs (Dall-e model)       |
 | 1   | `Lab-1-Gradio_Birthday_Card_Generation.ipynb`                | 📝 Text            | Build a birthday card generator using information from dataset           |
