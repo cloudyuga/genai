@@ -1,4 +1,4 @@
-# install "uv" : Python package manager
+# Install "uv" : Python package manager
 
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
@@ -37,7 +37,7 @@ What’s happening under the hood? When you ask a question:
 - The response is displayed to you!
 
 # Install Claude Desktop
-visit https://claude.ai/download to download claude desktop in local machine.
+Visit https://claude.ai/download to download claude desktop in local machine.
 
 Open Claude Application 
 
