@@ -1,5 +1,5 @@
 
-## ⚙️ Key Components of LLMOps
+# ⚙️ Key Components of LLMOps
 
 This section outlines the core building blocks of operationalizing Large Language Models (LLMs) in real-world applications. Each component plays a vital role in building scalable, safe, and effective LLM-based systems.
 
