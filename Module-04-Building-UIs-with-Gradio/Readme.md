@@ -1,5 +1,7 @@
 # 🧪 Gradio UI Module — Interactive App Development with Python
-This module is dedicated to building modern, interactive UIs using Gradio — a lightweight Python library that lets you create shareable web apps for machine learning models, data apps, and more — all in just a few lines of code.
+This module contains hands-on projects and labs focused on building **interactive applications using Gradio**. From health calculators to resume analyzers and AI-powered tools, this collection showcases how to design, develop, and deploy real-world user interfaces for AI/ML models using Gradio.
+
+---
 
 ## 🚀 What You'll Learn
 - Simple Apps without LLM like BMI calculator, upload CSV files
@@ -9,131 +11,30 @@ This module is dedicated to building modern, interactive UIs using Gradio — a 
 - Use LLMs (like OpenAI GPT) to build dynamic apps
 - Build real-world tools like birthday messengers, HR assistants, and job description generators
 
-## 🔍 Gradio Application Descriptions
-### 1️⃣ BMI Calculator
-📂 Apps/1-BMI-calculator
+---
 
-- A Gradio-based app that calculates Body Mass Index (BMI) based on height and weight input.
+## 📦 Apps
 
-Tech stack: 
-- Gradio
-- Basic Python
+| App No. | Folder                         | Description                                                                 |
+|--------:|--------------------------------|-----------------------------------------------------------------------------|
+| 1       | `1-BMI-calculator`             | Calculate BMI and daily calorie needs based on height and weight input  |
+| 2       | `2-Upload-File-and-Process-Data` | Upload a CSV file and process it with Python logic (health data example)  |
+| 3       | `3-Content-Summary-App`        | Generate summaries of long-form content using LLMs                        |
+| 4       | `4-Invoice-Extractor`          | Extract key information from uploaded invoice image                            |
+| 5       | `5-gradio-client-example`      | Sample client code to connect with a Gradio API endpoint                  |
+| 6       | `6-Text-to-Image-Generation`   | Convert user text prompts to AI-generated images                          |
+| 7       | `7-MCQGen`                     | Automatically generate MCQs from uploaded URL.                 |
 
-### 2️⃣ Upload File and Process Data
-📂 Apps/2-Upload-FIle-and-Process-Data
+---
 
-- Allows users to upload .csv files and processes the content (e.g., BMI calculation).
+## 🧪 Labs
 
-Use case: 
-- Quick file exploration or preprocessing.
+| Lab | Name                               | Focus Area             | Description                                                                 |
+|-----|------------------------------------|------------------------|-----------------------------------------------------------------------------|
+| 0   | `Lab-0-Prompt_Execution.ipynb`     | Prompt Basics          | Basic prompt execution for text generation using LLMs.                      |
+| 1   | `Lab-1-Types_of_Gradio_App.ipynb`  | Gradio Fundamentals    | Overview of different Gradio app types—Blocks, Interface, and ChatInterface. |
+| 2   | `Lab-2-Birthday_Message_Apps.ipynb`| Data + Personalization | Build an app that generates custom birthday wishes based on hobbies.       |
+| 3   | `Lab-3-HR_Assistant.ipynb`         | NLP + HR               | Build an AI-powered assistant to answer HR-related queries.             |
+| 4   | `Lab-4-Job_Description_App.ipynb`  | Text Generation        | Automatically generate job descriptions from role input or URLs.                   |
 
-Tech stack: 
-- Gradio 
-- Pandas
-
-### 3️⃣ Content Summary App
-📂 Apps/3-Content-Summary-App
-
-- Summarizes text using an OpenAI-powered model.
-
-Use case: 
-- Condense articles
-- Blog posts
-- Notes
-
-Tech stack: 
-- Gradio
-- OpenAI API
-  
-
-### 4️⃣ Invoice Extractor
-📂 Apps/4-Invoice-Extractor
-
-- Upload an invoice image and extract key fields like date, invoice number, total etc.
-
-Use case: 
-- Automate invoice parsing.
-
-Tech stack: 
-- gradio
-- PIL
-- Google gemini API
-
-### 5️⃣ Gradio Client Example
-📂 Apps/5-gradio-client-example
-
-- Demonstrates how to call a Gradio app using the gradio_client from another Python script.
-
-Use case: 
-- Programmatically interact with a deployed Gradio app.
-
-### 6️⃣ Text to Image Generation
-📂 Apps/6-Text-to-Image-Generation
-
-- Converts user prompts into AI-generated images.
-
-Use case: 
-- Creative applications like posters, art, or storytelling.
-  
-Tech stack: 
-- Diffusion models via Hugging Face
-- gradio
-
-### 7️⃣ MCQ Generator
-📂 Apps/7-MCQGen
-
-- Generate multiple-choice questions from a given paragraph or document.
-
-Use case: 
-- EdTech
-- Quiz creation
-
-Tech stack: 
-- NLP (OpenAI or Hugging Face) 
-- Gradio
-- Panda (dataframe)
-
-## 🧪 Gradio Labs Collection
-### ✅ Lab-0: Prompt Execution
-📄 Lab-0-Prompt_Execution.ipynb
-
-- Demo 1:
-Directly call the model using Python code to understand how prompts and responses work with OpenAI's Chat API.
-
-- Demo 2:
-Use Gradio to create a user-friendly interface that allows anyone to enter prompts without writing code.
-
-👉 Behind the scenes, the prompt is still sent along with a system message to shape the assistant's behavior.
-
-Goal: Understand how to send input to an LLM and display the response interactively with Gradio.
-
-### 🏗️ Lab-1: Types of Gradio App
-📄 Lab-1-Types_of_Gradio_App.ipynb
-
-Description: Learn about different Gradio app interfaces: Interface, Blocks, and ChatInterface.
-
-Goal: Understand Gradio's app structure and choose the right interface for your use case.
-
-### 🎂 Lab-2: Birthday Message Apps
-📄 Lab-2-Birthday_Message_Apps.ipynb
-
-Description: Create fun birthday greeting generators with Gradio.
-
-Goal: Generate personalized birthday messages using text input and model outputs.
-
-### 🧑‍💼 Lab-3: HR Assistant
-📄 Lab-3-HR_Assistant.ipynb
-
-Description: Build an AI-powered assistant to answer HR-related queries.
-
-Goal: Demonstrate use of prompt engineering, chat interaction, and data handling.
-
-### 📄 Lab-4: Job Description Generator Apps
-📄 Lab-4-Job_Description_App.ipynb
-
-Description: Automatically generate job descriptions based on input roles and responsibilities. We have created Job Description in different ways.
-- Demo 1: Without any context : input ---> job title and role details 
-- Demo 2: Using company URL : input ---> company URL
-- Demo 3: Using reference URL : input ---> Your company name, Reference job description URL of any company
-
-Goal: Explore practical use of LLMs in automating HR and recruitment tasks.
+---
