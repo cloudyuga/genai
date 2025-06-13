@@ -6,7 +6,7 @@ This module contains practical LLM applications powered by **OpenAI API** and **
 
 ## 📁 Contents
 
-### 🔌 Mini Projects : Streamlit Applications
+### 🔌 Mini Projects : Streamlit & Gradio Applications
 
 | Folder | Description |
 |--------|-------------|
