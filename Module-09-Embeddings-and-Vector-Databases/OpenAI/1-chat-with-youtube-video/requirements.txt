@@ -5,7 +5,7 @@ pytube
 PyMuPDF
 openai
 langchain
-langchain_community
+langchain-community
 langchain-text-splitters
 sentence-transformers
 chromadb
