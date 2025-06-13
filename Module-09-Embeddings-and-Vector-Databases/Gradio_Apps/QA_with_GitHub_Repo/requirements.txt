@@ -1,0 +1,11 @@
+gradio
+langchain
+python-dotenv
+openai
+chromadb
+sentence-transformers
+langchain-chroma
+langchain-text-splitters
+langchain-huggingface
+langchain-community
+PyGithub
