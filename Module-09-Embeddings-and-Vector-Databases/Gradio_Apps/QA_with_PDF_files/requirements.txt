@@ -1,0 +1,12 @@
+gradio
+langchain
+youtube-transcript-api
+pytube
+python-dotenv
+openai
+chromadb
+sentence-transformers
+PyMuPDF
+langchain-chroma
+langchain-huggingface
+langchain-community
