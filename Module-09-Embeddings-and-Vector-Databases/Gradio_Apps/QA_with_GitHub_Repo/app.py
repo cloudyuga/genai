@@ -1,6 +1,6 @@
 import gradio as gr
 import os
-from app_github import Github
+from github import Github
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
